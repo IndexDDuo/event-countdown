@@ -31,8 +31,8 @@ export default function Edit({ navigation, route }) {
   const [reminderChecked, setReminderChecked] = useState(false);
 
   useEffect(() => {
-    console.log(`modalVisible is ${modalVisible}`);
-  }, [modalVisible]);
+    console.log(`modalVisible is ${modalVisible} in Edit.`);
+  }, [setModalVisible]);
 
   return (
     <SafeAreaView>
