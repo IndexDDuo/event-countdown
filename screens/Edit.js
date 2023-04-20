@@ -55,7 +55,7 @@ export default function Edit({ navigation, route }) {
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => {
-                route.params.setModalVisible(false);
+                setModalVisible(false);
                 navigation.navigate("Home");
               }}
             >
