@@ -16,15 +16,9 @@ export default function Home({ navigation }) {
 
   const eventDataArray = eventData;
 
-  const TaskDisplay = ({ name,date }) => (
+  const TaskDisplay = ({ name, date }) => (
     <View>
-      <Text
-        center
-        title={`${id}. ${description}`}
-        checked={completed}
-        onPress={() => handlePress(id)}
-        titleProps={{ style: handleCrossThrough(completed) }}
-      ></Text>
+      <Text center title={`${name}${date}`}></Text>
     </View>
   );
 
