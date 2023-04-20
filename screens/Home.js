@@ -17,6 +17,12 @@ export default function Home({ navigation }) {
     <SafeAreaView>
       <View>
         <Text>This is Home Screen</Text>
+        <Button
+          title="Edit"
+          onPress={() => {
+            navigation.navigate("Edit");
+          }}
+        ></Button>
       </View>
     </SafeAreaView>
   );
