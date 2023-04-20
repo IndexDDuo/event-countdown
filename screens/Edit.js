@@ -34,6 +34,10 @@ export default function Edit({ navigation, route }) {
   // handling the reminder checkbox
   const [reminderChecked, setReminderChecked] = useState(false);
 
+  useEffect(() => {
+    console.log(`save button is pressed. edit.js ${modalVisible}`);
+  }, [modalVisible]);
+
   return (
     <SafeAreaView>
       <Modal
@@ -51,8 +55,7 @@ export default function Edit({ navigation, route }) {
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => {
-                setModalVisible(!modalVisible); // toggle the state value
-                console.log(`save button is pressed. edit.js ${modalVisible}`); // log the updated value
+                setModalVisible(false); // toggle the state value
               }}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
