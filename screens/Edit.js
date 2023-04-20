@@ -41,7 +41,7 @@ export default function Edit({ navigation, route }) {
   // handling modal
   const handleSave = useCallback(() => {
     setModalVisible(false);
-    navigation.goBack();
+    navigation.navigate("Home");
   }, [navigation, setModalVisible]);
 
   return (
