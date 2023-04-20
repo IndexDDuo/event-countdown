@@ -13,10 +13,7 @@ const Stack = createNativeStackNavigator();
 const handleSave = (modalVisible, setModalVisible, navigation) => {
   setModalVisible(true);
   console.log(`save button is pressed. app.js  ${modalVisible}`);
-  // navigation.navigate("Edit", {
-  //   modalVisible: modalVisible,
-  //   setModalVisible: setModalVisible,
-  // });
+  navigation.navigate("Edit", { modalVisible: true });
 };
 
 export default function App() {
