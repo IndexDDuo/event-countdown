@@ -13,10 +13,6 @@ export default function App() {
   // handling modal
   const [modalVisible, setModalVisible] = useState(false);
 
-  function toggleModalVisibility(setModalVisible) {
-    setModalVisible((prevModalVisible) => !prevModalVisible);
-  }
-
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Edit">
@@ -43,7 +39,7 @@ export default function App() {
               <Button
                 title="Save"
                 onPress={() => {
-                  setModalVisible(!modalVisible);
+                  setModalVisible(true);
                   // toggleModalVisibility();
                   // navigation.navigate("Home");
                 }}
