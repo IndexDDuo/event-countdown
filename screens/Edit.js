@@ -15,15 +15,9 @@ export default function Edit({ navigation }) {
 
   //handling the all day? checkbox
   const [allDayChecked, setAllDayChecked] = useState(false);
-  const handleallDayChecked = () => {
-    setAllDayChecked(!allDayChecked);
-  };
 
   //handling the render checkbox
   const [reminderChecked, setReminderChecked] = useState(false);
-  const handlereminderChecked = () => {
-    setReminderChecked(!reminderChecked);
-  };
 
   return (
     <SafeAreaView>
@@ -36,12 +30,12 @@ export default function Edit({ navigation }) {
         <CheckBox
           title={"All day?"}
           checked={allDayChecked}
-          onPress={handleallDayChecked}
+          onPress={() => setAllDayChecked(!allDayChecked)}
         />
         <CheckBox
           title={"Reminder?"}
           checked={reminderChecked}
-          onPress={handlereminderChecked}
+          onPress={() => setReminderChecked(!reminderChecked)}
         />
         <Text>Event Description:</Text>
         <TextInput style={styles.input}></TextInput>
