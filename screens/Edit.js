@@ -1,4 +1,12 @@
-import { StyleSheet, TextInput, View, ScrollView, Modal } from "react-native";
+import {
+  StyleSheet,
+  TextInput,
+  View,
+  ScrollView,
+  Modal,
+  Pressable,
+  Alert,
+} from "react-native";
 import { Button, Text, CheckBox } from "@rneui/themed";
 import * as Font from "expo-font";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
@@ -24,6 +32,34 @@ export default function Edit({ navigation }) {
 
   return (
     <SafeAreaView>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalText}>Hello World!</Text>
+            <Pressable
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.textStyle}>Hide Modal</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+      <Pressable
+        style={[styles.button, styles.buttonOpen]}
+        onPress={() => setModalVisible(true)}
+      >
+        <Text style={styles.textStyle}>Show Modal</Text>
+      </Pressable>
+
       <ScrollView>
         <View>
           <Text>Event Name:</Text>
