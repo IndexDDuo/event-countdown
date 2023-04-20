@@ -27,9 +27,10 @@ export default function Home({ navigation }) {
         <Text>This is Home Screen</Text>
         <FlatList
           data={eventDataArray}
-          renderItem={({ item }) => <Item title={item.title} />}
-          keyExtractor={(item) => item.id}
-        ></FlatList>
+          renderItem={({ item }) => (
+            <TaskDisplay name={item.eventName} date={item.eventDate} />
+          )}
+        />
       </View>
     </SafeAreaView>
   );
