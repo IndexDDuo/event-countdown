@@ -24,6 +24,12 @@ export default function Edit({ navigation, route }) {
 
   const { modalVisible, setModalVisible } = route.params;
 
+  useEffect(() => {
+    console.log(
+      `modalVisible has been updated to ${modalVisible} in the edit screen`
+    );
+  }, [modalVisible]);
+
   // handling the all day? checkbox
   const [allDayChecked, setAllDayChecked] = useState(false);
 
