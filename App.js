@@ -10,11 +10,8 @@ import Edit from "./screens/Edit.js";
 const Stack = createNativeStackNavigator();
 
 // handling modal
-const handleSave = (modalVisible, setModalVisible, navigation) => {
-  setModalVisible(true);
-  console.log(`save button is pressed. app.js  ${modalVisible}`);
+const handleSave = (navigation) => {
   navigation.navigate("Edit", {
-    modalVisible: modalVisible,
     setModalVisible: setModalVisible,
   });
 };
@@ -52,7 +49,7 @@ export default function App() {
               <Button
                 title="Save"
                 onPress={() => {
-                  handleSave(modalVisible, setModalVisible, navigation);
+                  handleSave(navigation);
                 }}
               ></Button>
             ),
