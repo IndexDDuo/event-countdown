@@ -36,7 +36,7 @@ export default function Edit({ navigation, route }) {
 
   useEffect(() => {
     console.log(`save button is pressed. edit.js ${modalVisible}`);
-  }, [modalVisible]);
+  }, [modalVisible, setModalVisible]);
 
   // handling modal
   const handleSave = useCallback(() => {
@@ -61,7 +61,8 @@ export default function Edit({ navigation, route }) {
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => {
-                handleSave();
+                route.params.setModalVisible(false);
+                navigation.navigate("Home");
               }}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
