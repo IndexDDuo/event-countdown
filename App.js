@@ -43,7 +43,8 @@ export default function App() {
               <Button
                 title="Save"
                 onPress={() => {
-                  toggleModalVisibility();
+                  setModalVisible(!modalVisible);
+                  // toggleModalVisibility();
                   // navigation.navigate("Home");
                 }}
               ></Button>
