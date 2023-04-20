@@ -40,6 +40,9 @@ export default function App() {
                 title="Save"
                 onPress={() => {
                   setModalVisible(true);
+                  console.log(
+                    `save button is pressed. modalVisable is set to ${modalVisible}`
+                  );
                 }}
               ></Button>
             ),
