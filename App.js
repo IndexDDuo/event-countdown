@@ -17,7 +17,7 @@ export default function App() {
           options={({ navigation }) => ({
             headerRight: () => (
               <Button
-                title="Edit"
+                title="Add"
                 onPress={() => {
                   navigation.navigate("Edit");
                 }}
