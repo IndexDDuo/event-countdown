@@ -39,14 +39,17 @@ export default function Edit({ navigation, route }) {
   }, [modalVisible]);
 
   // handling modal
-  const handleSave = (modalVisible, setModalVisible, navigation) => {
-    setModalVisible(false);
-    console.log(`save button is pressed. edit.js.js  ${modalVisible}`);
-    navigation.navigate("Home", {
-      modalVisible: modalVisible,
-      setModalVisible: setModalVisible,
-    });
-  };
+  const handleSave = useCallback(
+    () => (modalVisible, setModalVisible, navigation) => {
+      setModalVisible(false);
+      console.log(`save button is pressed. edit.js.js  ${modalVisible}`);
+      navigation.navigate("Home", {
+        modalVisible: modalVisible,
+        setModalVisible: setModalVisible,
+      });
+    },
+    [navigation, modalVisible]
+  );
 
   return (
     <SafeAreaView>
