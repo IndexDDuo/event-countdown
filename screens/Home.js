@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 import { Button, Text } from "@rneui/themed";
 import * as Font from "expo-font";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
@@ -15,8 +15,7 @@ export default function Home({ navigation }) {
   cacheFonts([FontAwesome.font]);
 
   const eventDataArray = eventData;
-  type ItemProps = { title: string };
-  const Item = ({ title }: ItemProps) => (
+  const Item = ({ title }) => (
     <View style={styles.item}>
       <Text style={styles.title}>{title}</Text>
     </View>
