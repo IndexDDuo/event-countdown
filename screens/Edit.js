@@ -61,9 +61,7 @@ export default function Edit({ navigation, route }) {
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => {
-                setModalVisible(false, () => {
-                  console.log("Modal visibility updated to false");
-                });
+                setModalVisible(false);
               }}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
