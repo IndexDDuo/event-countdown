@@ -17,18 +17,16 @@ export default function App() {
     console.log(`modalVisible has been updated to ${modalVisible}`);
   }, [modalVisible]);
 
-  useMemo(() => {
-    const handleSave = () => {
-      setModalVisible(true);
-      console.log(
-        `save button is pressed. modalVisible is set to ${modalVisible}`
-      );
-      navigation.navigate("Edit", {
-        modalVisible: modalVisible,
-        setModalVisible: setModalVisible,
-      });
-    };
-  });
+  // const handleSave = useMemo(() => {
+  //   setModalVisible(true);
+  //   console.log(
+  //     `save button is pressed. modalVisible is set to ${modalVisible}`
+  //   );
+  //   navigation.navigate("Edit", {
+  //     modalVisible: modalVisible,
+  //     setModalVisible: setModalVisible,
+  //   });
+  // });
 
   return (
     <NavigationContainer>
