@@ -56,7 +56,7 @@ export default function Edit({ navigation, route }) {
               style={[styles.button, styles.buttonClose]}
               onPress={() => {
                 setModalVisible(false);
-                navigation.navigate("Home");
+                navigation.navigate("Home", { modalVisible: false });
               }}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
