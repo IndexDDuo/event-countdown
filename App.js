@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { Button, StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React, { useState, useCallback, useEffect, useMemo } from "react";
 import Home from "./screens/Home.js";
 import Detail from "./screens/Detail.js";
 import Edit from "./screens/Edit.js";
@@ -10,6 +11,10 @@ export default function App() {
   const Stack = createNativeStackNavigator();
 
   // handling modal
+  const [modalVisible, setModalVisible] = useState(false);
+  function toggleModalVisibility(setModalVisible) {
+    setModalVisible((prevModalVisible) => !prevModalVisible);
+  }
 
   return (
     <NavigationContainer>
@@ -37,12 +42,13 @@ export default function App() {
               <Button
                 title="Save"
                 onPress={() => {
-                  // toggleModalVisibility();
+                  toggleModalVisibility();
                   // navigation.navigate("Home");
                 }}
               ></Button>
             ),
           })}
+          initialParams={{ setModalVisible: toggleModalVisibility }}
         />
       </Stack.Navigator>
     </NavigationContainer>
