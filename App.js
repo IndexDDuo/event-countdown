@@ -26,7 +26,7 @@ export default function App() {
   //     modalVisible: modalVisible,
   //     setModalVisible: setModalVisible,
   //   });
-  // });
+  // },[]);
 
   return (
     <NavigationContainer>
