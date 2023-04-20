@@ -15,9 +15,16 @@ export default function Home({ navigation }) {
   cacheFonts([FontAwesome.font]);
 
   const eventDataArray = eventData;
-  const Item = ({ title }) => (
-    <View style={styles.item}>
-      <Text style={styles.title}>{title}</Text>
+
+  const TaskDisplay = ({ name,date }) => (
+    <View>
+      <Text
+        center
+        title={`${id}. ${description}`}
+        checked={completed}
+        onPress={() => handlePress(id)}
+        titleProps={{ style: handleCrossThrough(completed) }}
+      ></Text>
     </View>
   );
 
