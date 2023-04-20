@@ -2,9 +2,9 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "./event-countdown-app/screens/Home.js";
-import Detail from "./event-countdown-app/screens/Detail.js";
-import Edit from "./event-countdown-app/screens/Edit.js";
+import Home from "./screens/Home.js";
+import Detail from "./screens/Detail.js";
+import Edit from "./screens/Edit.js";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
