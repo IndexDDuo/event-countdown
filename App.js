@@ -10,7 +10,6 @@ export default function App() {
   const Stack = createNativeStackNavigator();
 
   // handling modal
-  const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <NavigationContainer>

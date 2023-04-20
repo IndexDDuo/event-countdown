@@ -40,7 +40,7 @@ export default function Edit({ navigation, route }) {
   return (
     <SafeAreaView>
       <Modal
-        animationType="slide"
+        animationType="none"
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
