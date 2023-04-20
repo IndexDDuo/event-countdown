@@ -35,38 +35,8 @@ export default function Edit({ navigation, route }) {
   // handling the reminder checkbox
   const [reminderChecked, setReminderChecked] = useState(false);
 
-  // handling modal
-  const [modalVisible, setModalVisible] = useState(false);
-
   return (
     <SafeAreaView>
-      <Modal
-        animationType="none"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(false);
-        }}
-      >
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World!</Text>
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.textStyle}>Hide Modal</Text>
-            </Pressable>
-          </View>
-        </View>
-      </Modal>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
-      >
-        <Text style={styles.textStyle}>Show Modal</Text>
-      </Pressable>
-
       <ScrollView>
         <View>
           <Text>Event Name:</Text>
