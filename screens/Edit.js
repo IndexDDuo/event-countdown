@@ -5,7 +5,7 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import React, { useState, useCallback, useEffect, useMemo } from "react";
 import { StackActions } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ButtonGroup } from "react-native-elements";
+import { ButtonGroup, CheckBox } from "react-native-elements";
 
 async function cacheFonts(fonts) {
   return fonts.map(async (font) => await Font.loadAsync(font));
@@ -17,6 +17,12 @@ export default function Edit({ navigation }) {
     <SafeAreaView>
       <View>
         <Text>Event Name:</Text>
+        <TextInput style={styles.input}></TextInput>
+        <Text>Event Date:</Text>
+        <TextInput style={styles.input}></TextInput>
+        <CheckBox title={"All day?"}></CheckBox>
+        <CheckBox title={"Reminder?"}></CheckBox>
+        <Text>Event Description:</Text>
         <TextInput style={styles.input}></TextInput>
       </View>
     </SafeAreaView>
