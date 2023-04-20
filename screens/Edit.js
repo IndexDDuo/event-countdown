@@ -29,6 +29,9 @@ export default function Edit({ navigation }) {
 
   // handling modal
   const [modalVisible, setModalVisible] = useState(false);
+  const toggleModalVisibility = () => {
+    setModalVisible(!modalVisible);
+  };
 
   return (
     <SafeAreaView>
