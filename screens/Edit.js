@@ -40,9 +40,9 @@ export default function Edit({ navigation, route }) {
 
   // handling modal
   const handleSave = useCallback(() => {
-    setModalVisible(false);
+    route.params.setModalVisible(false);
     navigation.navigate("Home");
-  }, [navigation, setModalVisible]);
+  }, [navigation, route.params]);
 
   return (
     <SafeAreaView>
