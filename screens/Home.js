@@ -14,17 +14,22 @@ async function cacheFonts(fonts) {
 export default function Home({ navigation }) {
   cacheFonts([FontAwesome.font]);
 
+  const eventDataArray = eventData;
+  type ItemProps = { title: string };
+  const Item = ({ title }: ItemProps) => (
+    <View style={styles.item}>
+      <Text style={styles.title}>{title}</Text>
+    </View>
+  );
+
   return (
     <SafeAreaView>
       <View>
         <Text>This is Home Screen</Text>
         <FlatList
-          data={eventData}
-          renderItem={({ item}) => (
-            <TaskDisplay
-              {item.eventName}
-            ></TaskDisplay>
-          )}
+          data={eventDataArray}
+          renderItem={({ item }) => <Item title={item.title} />}
+          keyExtractor={(item) => item.id}
         ></FlatList>
       </View>
     </SafeAreaView>
