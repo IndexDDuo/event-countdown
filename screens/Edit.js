@@ -39,10 +39,10 @@ export default function Edit({ navigation, route }) {
       <Modal
         animationType="none"
         transparent={true}
-        visible={modalVisible}
+        visible={false}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          setModalVisible(false);
         }}
       >
         <View style={styles.centeredView}>
