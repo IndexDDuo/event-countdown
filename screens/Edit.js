@@ -33,6 +33,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   input: {
-    borderStyle: "solid",
+    borderWidth: 1,
   },
 });
