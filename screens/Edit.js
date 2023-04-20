@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, View } from "react-native";
+import { StyleSheet, TextInput, View, ScrollView } from "react-native";
 import { Button, Text, CheckBox } from "@rneui/themed";
 import * as Font from "expo-font";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
@@ -21,25 +21,27 @@ export default function Edit({ navigation }) {
 
   return (
     <SafeAreaView>
-      <View>
-        <Text>Event Name:</Text>
-        <TextInput style={styles.input}></TextInput>
-        <Text>Event Date:</Text>
-        <TextInput style={styles.input}></TextInput>
+      <ScrollView>
+        <View>
+          <Text>Event Name:</Text>
+          <TextInput style={styles.input}></TextInput>
+          <Text>Event Date:</Text>
+          <TextInput style={styles.input}></TextInput>
 
-        <CheckBox
-          title={"All day?"}
-          checked={allDayChecked}
-          onPress={() => setAllDayChecked(!allDayChecked)}
-        />
-        <CheckBox
-          title={"Reminder?"}
-          checked={reminderChecked}
-          onPress={() => setReminderChecked(!reminderChecked)}
-        />
-        <Text>Event Description:</Text>
-        <TextInput style={styles.input}></TextInput>
-      </View>
+          <CheckBox
+            title={"All day?"}
+            checked={allDayChecked}
+            onPress={() => setAllDayChecked(!allDayChecked)}
+          />
+          <CheckBox
+            title={"Reminder?"}
+            checked={reminderChecked}
+            onPress={() => setReminderChecked(!reminderChecked)}
+          />
+          <Text>Event Description:</Text>
+          <TextInput style={styles.input}></TextInput>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
