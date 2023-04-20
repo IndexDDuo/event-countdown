@@ -23,7 +23,7 @@ export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
-    console.log(`modalVisible has been updated to ${modalVisible}`);
+    console.log(`App.js ${modalVisible}`);
   }, [modalVisible]);
 
   return (

@@ -25,9 +25,7 @@ export default function Edit({ navigation, route }) {
   const { modalVisible, setModalVisible } = route.params;
 
   useEffect(() => {
-    console.log(
-      `modalVisible has been updated to ${modalVisible} in the edit screen`
-    );
+    console.log(`Edit.js ${modalVisible}`);
   }, [modalVisible, setModalVisible]);
 
   // handling the all day? checkbox
@@ -55,7 +53,7 @@ export default function Edit({ navigation, route }) {
               onPress={() => {
                 setModalVisible(!modalVisible); // toggle the state value
                 console.log(
-                  `save button is pressed. modalVisible is set to ${!modalVisible}`
+                  `save button is pressed. modalVisible is set to ${modalVisible}`
                 ); // log the updated value
               }}
             >
