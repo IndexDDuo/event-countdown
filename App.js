@@ -40,8 +40,6 @@ export default function App() {
                 title="Save"
                 onPress={() => {
                   setModalVisible(true);
-                  // toggleModalVisibility();
-                  // navigation.navigate("Home");
                 }}
               ></Button>
             ),
