@@ -13,7 +13,9 @@ async function cacheFonts(fonts) {
 export default function Edit({ navigation }) {
   cacheFonts([FontAwesome.font]);
   const [allDayChecked, setAllDayChecked] = useState(false);
-
+  const handleallDayChecked = () => {
+    setAllDayChecked(!allDayChecked);
+  };
   return (
     <SafeAreaView>
       <View>
@@ -26,7 +28,7 @@ export default function Edit({ navigation }) {
           center
           title={"All day?"}
           checked={allDayChecked}
-          onPress={setAllDayChecked(!allDayChecked)}
+          onPress={handleallDayChecked}
         />
         <CheckBox title={"Reminder?"}></CheckBox>
         <Text>Event Description:</Text>
