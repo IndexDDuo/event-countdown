@@ -69,7 +69,7 @@ export default function Edit({ navigation, route }) {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World!</Text>
+            <Text style={styles.modalText}>Save Successful!</Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => {
@@ -77,7 +77,7 @@ export default function Edit({ navigation, route }) {
                 navigation.navigate("Home");
               }}
             >
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle}>Ok</Text>
             </Pressable>
           </View>
         </View>
