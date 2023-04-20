@@ -22,7 +22,7 @@ async function cacheFonts(fonts) {
 export default function Edit({ navigation, route }) {
   cacheFonts([FontAwesome.font]);
 
-  const { setModalVisible } = route.params;
+  const { modalVisible, setModalVisible } = route.params;
 
   // handling the all day? checkbox
   const [allDayChecked, setAllDayChecked] = useState(false);
@@ -39,7 +39,7 @@ export default function Edit({ navigation, route }) {
       <Modal
         animationType="none"
         transparent={true}
-        visible={false}
+        visible={modalVisible}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
           setModalVisible(false);
