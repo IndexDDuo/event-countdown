@@ -18,7 +18,10 @@ export default function Home({ navigation }) {
 
   const TaskDisplay = ({ name, date }) => (
     <View>
-      <Text center title={`${name}${date}`}></Text>
+      <Text>
+        {name}
+        {date}
+      </Text>
     </View>
   );
 
