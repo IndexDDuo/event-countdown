@@ -18,18 +18,14 @@ export default function Home({ navigation }) {
     <SafeAreaView>
       <View>
         <Text>This is Home Screen</Text>
-        {/* <FlatList
-          data={questionsArr}
-          renderItem={({ item, index }) => (
+        <FlatList
+          data={eventData}
+          renderItem={({ item}) => (
             <TaskDisplay
-              prompt={item.prompt}
-              choices={item.choices}
-              correct={item.correct}
-              userChoice={userChoice[index]}
-              type={item.type}
+              {item.eventName}
             ></TaskDisplay>
           )}
-        ></FlatList> */}
+        ></FlatList>
       </View>
     </SafeAreaView>
   );
