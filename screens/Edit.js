@@ -43,7 +43,7 @@ export default function Edit({ navigation, route }) {
     route.params.setModalVisible(false);
     navigation.navigate("Home");
   }, [navigation, route.params]);
-
+  console.log("setModalVisible", setModalVisible);
   return (
     <SafeAreaView>
       <Modal
