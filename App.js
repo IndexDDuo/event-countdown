@@ -52,7 +52,7 @@ export default function App() {
               <Button
                 title="Save"
                 onPress={() => {
-                  handleSave(setModalVisible, navigation);
+                  handleSave(modalVisible, setModalVisible, navigation);
                 }}
               ></Button>
             ),
