@@ -69,7 +69,7 @@ export default function Edit({ navigation, route }) {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Save Successful!</Text>
+            <Text style={styles.modalText}>Saved!</Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => {
