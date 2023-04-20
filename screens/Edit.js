@@ -24,7 +24,7 @@ export default function Edit({ navigation, route }) {
 
   const { modalVisible, setModalVisible } = route.params;
 
-  // const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
 
   // handling the all day? checkbox
   const [allDayChecked, setAllDayChecked] = useState(false);
