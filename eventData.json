@@ -4,6 +4,7 @@
     "eventDate": "2023-05-12T13:37:27+00:00",
     "allDay": true,
     "reminder": true,
-    "reminderTime": "2023-05-10T13:37:27+00:00"
+    "reminderTime": "2023-05-10T13:37:27+00:00",
+    "eventDesc": "It's summer time!"
   }
 ]
