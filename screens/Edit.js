@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, View, ScrollView } from "react-native";
+import { StyleSheet, TextInput, View, ScrollView, Modal } from "react-native";
 import { Button, Text, CheckBox } from "@rneui/themed";
 import * as Font from "expo-font";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
