@@ -52,7 +52,12 @@ export default function Edit({ navigation, route }) {
             <Text style={styles.modalText}>Hello World!</Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => {
+                setModalVisible(!modalVisible); // toggle the state value
+                console.log(
+                  `save button is pressed. modalVisible is set to ${!modalVisible}`
+                ); // log the updated value
+              }}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </Pressable>
