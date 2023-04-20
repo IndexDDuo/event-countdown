@@ -30,13 +30,6 @@ export default function Edit({ navigation, route }) {
     );
   }, [modalVisible, setModalVisible]);
 
-  const onSaveButtonPress = useCallback(() => {
-    setModalVisible(true);
-    console.log(
-      `save button is pressed. modalVisible is set to ${modalVisible}`
-    );
-  }, [modalVisible, setModalVisible]);
-
   // handling the all day? checkbox
   const [allDayChecked, setAllDayChecked] = useState(false);
 

@@ -17,6 +17,17 @@ export default function App() {
     console.log(`modalVisible has been updated to ${modalVisible}`);
   }, [modalVisible]);
 
+  const handleSave = () => {
+    setModalVisible(true);
+    console.log(
+      `save button is pressed. modalVisible is set to ${modalVisible}`
+    );
+    navigation.navigate("Edit", {
+      modalVisible: modalVisible,
+      setModalVisible: setModalVisible,
+    });
+  };
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Edit">
@@ -43,7 +54,7 @@ export default function App() {
               <Button
                 title="Save"
                 onPress={() => {
-                  setModalVisible(true);
+                  handleSave();
                 }}
               ></Button>
             ),
