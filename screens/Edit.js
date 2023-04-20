@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, TextInput, View } from "react-native";
 import { Button, Text } from "@rneui/themed";
 import * as Font from "expo-font";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
@@ -16,7 +16,8 @@ export default function Edit({ navigation }) {
   return (
     <SafeAreaView>
       <View>
-        <Text>This is Edit Screen</Text>
+        <Text>Event Name:</Text>
+        <TextInput></TextInput>
       </View>
     </SafeAreaView>
   );
