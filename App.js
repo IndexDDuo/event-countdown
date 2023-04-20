@@ -7,26 +7,24 @@ import Home from "./screens/Home.js";
 import Detail from "./screens/Detail.js";
 import Edit from "./screens/Edit.js";
 
-export default function App() {
-  const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
-  // handling modal
+// handling modal
+const handleSave = (modalVisible, setModalVisible, navigation) => {
+  setModalVisible(true);
+  console.log(`save button is pressed. modalVisible is set to ${modalVisible}`);
+  navigation.navigate("Edit", {
+    modalVisible: modalVisible,
+    setModalVisible: setModalVisible,
+  });
+};
+
+export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
     console.log(`modalVisible has been updated to ${modalVisible}`);
   }, [modalVisible]);
-
-  // const handleSave = useMemo(() => {
-  //   setModalVisible(true);
-  //   console.log(
-  //     `save button is pressed. modalVisible is set to ${modalVisible}`
-  //   );
-  //   navigation.navigate("Edit", {
-  //     modalVisible: modalVisible,
-  //     setModalVisible: setModalVisible,
-  //   });
-  // },[]);
 
   return (
     <NavigationContainer>
@@ -54,7 +52,7 @@ export default function App() {
               <Button
                 title="Save"
                 onPress={() => {
-                  handleSave();
+                  handleSave(modalVisible, setModalVisible, navigation);
                 }}
               ></Button>
             ),
