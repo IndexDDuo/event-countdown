@@ -26,9 +26,7 @@ export default function Edit({ navigation }) {
           center
           title={"All day?"}
           checked={allDayChecked}
-          onPress={(checked) => {
-            checked ? setAllDayChecked(false) : setAllDayChecked(true);
-          }}
+          onPress={setAllDayChecked(!allDayChecked)}
         />
         <CheckBox title={"Reminder?"}></CheckBox>
         <Text>Event Description:</Text>
