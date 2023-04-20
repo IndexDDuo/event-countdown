@@ -24,25 +24,21 @@ export default function Edit({ navigation, route }) {
 
   const { modalVisible, setModalVisible } = route.params;
 
-  // const [modalVisible, setModalVisible] = useState(false);
-
   // handling the all day? checkbox
   const [allDayChecked, setAllDayChecked] = useState(false);
 
   // handling the reminder checkbox
   const [reminderChecked, setReminderChecked] = useState(false);
 
-  // handling modal across files
-
   return (
     <SafeAreaView>
       <Modal
         animationType="none"
         transparent={true}
-        visible={route.params.modalVisible}
+        visible={modalVisible}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          route.params.setModalVisible(!route.params.modalVisible);
+          setModalVisible(!modalVisible);
         }}
       >
         <View style={styles.centeredView}>
@@ -50,9 +46,7 @@ export default function Edit({ navigation, route }) {
             <Text style={styles.modalText}>Hello World!</Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
-              onPress={() =>
-                route.params.setModalVisible(!route.params.modalVisible)
-              }
+              onPress={() => setModalVisible(!modalVisible)}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </Pressable>
@@ -61,7 +55,7 @@ export default function Edit({ navigation, route }) {
       </Modal>
       <Pressable
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => route.params.setModalVisible(true)}
+        onPress={() => setModalVisible(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </Pressable>
