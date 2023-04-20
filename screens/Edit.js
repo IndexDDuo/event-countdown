@@ -30,12 +30,34 @@ export default function Edit({ navigation, route }) {
   // handling the reminder checkbox
   const [reminderChecked, setReminderChecked] = useState(false);
 
-  // useEffect(() => {
-  //   console.log(`save button is pressed. edit.js ${modalVisible}`);
-  // }, [modalVisible, setModalVisible]);
+  useEffect(() => {
+    console.log(`modalVisible is ${modalVisible}`);
+  }, [modalVisible]);
 
   return (
     <SafeAreaView>
+      <ScrollView>
+        <View>
+          <Text>Event Name:</Text>
+          <TextInput style={styles.input}></TextInput>
+          <Text>Event Date:</Text>
+          <TextInput style={styles.input}></TextInput>
+
+          <CheckBox
+            title={"All day?"}
+            checked={allDayChecked}
+            onPress={() => setAllDayChecked(!allDayChecked)}
+          />
+          <CheckBox
+            title={"Reminder?"}
+            checked={reminderChecked}
+            onPress={() => setReminderChecked(!reminderChecked)}
+          />
+          <Text>Event Description:</Text>
+          <TextInput style={styles.input}></TextInput>
+        </View>
+      </ScrollView>
+
       <Modal
         animationType="none"
         transparent={true}
@@ -60,34 +82,6 @@ export default function Edit({ navigation, route }) {
           </View>
         </View>
       </Modal>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
-      >
-        <Text style={styles.textStyle}>Show Modal</Text>
-      </Pressable>
-
-      <ScrollView>
-        <View>
-          <Text>Event Name:</Text>
-          <TextInput style={styles.input}></TextInput>
-          <Text>Event Date:</Text>
-          <TextInput style={styles.input}></TextInput>
-
-          <CheckBox
-            title={"All day?"}
-            checked={allDayChecked}
-            onPress={() => setAllDayChecked(!allDayChecked)}
-          />
-          <CheckBox
-            title={"Reminder?"}
-            checked={reminderChecked}
-            onPress={() => setReminderChecked(!reminderChecked)}
-          />
-          <Text>Event Description:</Text>
-          <TextInput style={styles.input}></TextInput>
-        </View>
-      </ScrollView>
     </SafeAreaView>
   );
 }
