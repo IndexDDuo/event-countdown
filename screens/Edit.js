@@ -24,7 +24,7 @@ export default function Edit({ navigation, route }) {
 
   const { modalVisible, setModalVisible } = route.params;
 
-  const [modalVisible, setModalVisible] = useState(false);
+  // const [modalVisible, setModalVisible] = useState(false);
 
   // handling the all day? checkbox
   const [allDayChecked, setAllDayChecked] = useState(false);
@@ -39,10 +39,10 @@ export default function Edit({ navigation, route }) {
       <Modal
         animationType="none"
         transparent={true}
-        visible={modalVisible}
+        visible={route.params.modalVisible}
         onRequestClose={() => {
           Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
+          route.params.setModalVisible(!route.params.modalVisible);
         }}
       >
         <View style={styles.centeredView}>
@@ -50,7 +50,9 @@ export default function Edit({ navigation, route }) {
             <Text style={styles.modalText}>Hello World!</Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() =>
+                route.params.setModalVisible(!route.params.modalVisible)
+              }
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </Pressable>
@@ -59,7 +61,7 @@ export default function Edit({ navigation, route }) {
       </Modal>
       <Pressable
         style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}
+        onPress={() => route.params.setModalVisible(true)}
       >
         <Text style={styles.textStyle}>Show Modal</Text>
       </Pressable>
