@@ -52,15 +52,11 @@ export default function App() {
               <Button
                 title="Save"
                 onPress={() => {
-                  handleSave(modalVisible, setModalVisible, navigation);
+                  handleSave(setModalVisible, navigation);
                 }}
               ></Button>
             ),
           })}
-          initialParams={{
-            setModalVisible: setModalVisible,
-            modalVisible: modalVisible,
-          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

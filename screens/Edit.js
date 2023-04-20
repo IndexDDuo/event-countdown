@@ -22,7 +22,9 @@ async function cacheFonts(fonts) {
 export default function Edit({ navigation, route }) {
   cacheFonts([FontAwesome.font]);
 
-  const { modalVisible, setModalVisible } = route.params;
+  // const { modalVisible, setModalVisible } = route.params;
+
+  const [modalVisible, setModalVisible] = useState(false);
 
   // handling the all day? checkbox
   const [allDayChecked, setAllDayChecked] = useState(false);
