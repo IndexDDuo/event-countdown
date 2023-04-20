@@ -14,7 +14,7 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{
+          options={({ navigation }) => ({
             headerRight: () => (
               <Button
                 title="Edit"
@@ -23,10 +23,23 @@ export default function App() {
                 }}
               ></Button>
             ),
-          }}
+          })}
         />
         <Stack.Screen name="Detail" component={Detail} />
-        <Stack.Screen name="Edit" component={Edit} />
+        <Stack.Screen
+          name="Edit"
+          component={Edit}
+          options={({ navigation }) => ({
+            headerRight: () => (
+              <Button
+                title="Save"
+                onPress={() => {
+                  navigation.navigate("Home");
+                }}
+              ></Button>
+            ),
+          })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
