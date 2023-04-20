@@ -18,6 +18,12 @@ import { ButtonGroup } from "react-native-elements";
 async function cacheFonts(fonts) {
   return fonts.map(async (font) => await Font.loadAsync(font));
 }
+
+// handling modal across files
+export function toggleModalVisibility(setModalVisible) {
+  setModalVisible((prevModalVisible) => !prevModalVisible);
+}
+
 export default function Edit({ navigation }) {
   cacheFonts([FontAwesome.font]);
 
@@ -26,12 +32,6 @@ export default function Edit({ navigation }) {
 
   // handling the reminder checkbox
   const [reminderChecked, setReminderChecked] = useState(false);
-
-  // handling modal
-  const [modalVisible, setModalVisible] = useState(false);
-  const toggleModalVisibility = () => {
-    setModalVisible(!modalVisible);
-  };
 
   return (
     <SafeAreaView>
