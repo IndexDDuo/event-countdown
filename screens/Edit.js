@@ -24,14 +24,19 @@ export function toggleModalVisibility(setModalVisible) {
   setModalVisible((prevModalVisible) => !prevModalVisible);
 }
 
-export default function Edit({ navigation }) {
+export default function Edit({ navigation, route }) {
   cacheFonts([FontAwesome.font]);
+
+  const { setModalVisible } = route.params;
 
   // handling the all day? checkbox
   const [allDayChecked, setAllDayChecked] = useState(false);
 
   // handling the reminder checkbox
   const [reminderChecked, setReminderChecked] = useState(false);
+
+  // handling modal
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <SafeAreaView>

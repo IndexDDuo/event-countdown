@@ -40,6 +40,7 @@ export default function App() {
               ></Button>
             ),
           })}
+          initialParams={{ setModalVisible: toggleModalVisibility }}
         />
       </Stack.Navigator>
     </NavigationContainer>
