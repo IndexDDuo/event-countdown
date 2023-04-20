@@ -17,7 +17,7 @@ export default function Edit({ navigation }) {
     <SafeAreaView>
       <View>
         <Text>Event Name:</Text>
-        <TextInput></TextInput>
+        <TextInput style={styles.input}></TextInput>
       </View>
     </SafeAreaView>
   );
@@ -31,5 +31,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: "bold",
+  },
+  input: {
+    borderStyle: "solid",
   },
 });
