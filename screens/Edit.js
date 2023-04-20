@@ -19,11 +19,6 @@ async function cacheFonts(fonts) {
   return fonts.map(async (font) => await Font.loadAsync(font));
 }
 
-// handling modal across files
-export function toggleModalVisibility(setModalVisible) {
-  setModalVisible((prevModalVisible) => !prevModalVisible);
-}
-
 export default function Edit({ navigation, route }) {
   cacheFonts([FontAwesome.font]);
 
@@ -36,6 +31,11 @@ export default function Edit({ navigation, route }) {
 
   // handling the reminder checkbox
   const [reminderChecked, setReminderChecked] = useState(false);
+
+  // handling modal across files
+  function toggleModalVisibility(setModalVisible) {
+    setModalVisible((prevModalVisible) => !prevModalVisible);
+  }
 
   return (
     <SafeAreaView>

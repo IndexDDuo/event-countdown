@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./screens/Home.js";
 import Detail from "./screens/Detail.js";
-import Edit, { toggleModalVisibility } from "./screens/Edit.js";
+import Edit from "./screens/Edit.js";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -37,13 +37,12 @@ export default function App() {
               <Button
                 title="Save"
                 onPress={() => {
-                  toggleModalVisibility();
+                  // toggleModalVisibility();
                   // navigation.navigate("Home");
                 }}
               ></Button>
             ),
           })}
-          initialParams={{ setModalVisible: toggleModalVisibility }}
         />
       </Stack.Navigator>
     </NavigationContainer>
