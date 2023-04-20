@@ -38,6 +38,16 @@ export default function Edit({ navigation, route }) {
     console.log(`save button is pressed. edit.js ${modalVisible}`);
   }, [modalVisible]);
 
+  // handling modal
+  const handleSave = (modalVisible, setModalVisible, navigation) => {
+    setModalVisible(false);
+    console.log(`save button is pressed. edit.js.js  ${modalVisible}`);
+    navigation.navigate("Home", {
+      modalVisible: modalVisible,
+      setModalVisible: setModalVisible,
+    });
+  };
+
   return (
     <SafeAreaView>
       <Modal
@@ -55,7 +65,7 @@ export default function Edit({ navigation, route }) {
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => {
-                setModalVisible(false);
+                handleSave();
               }}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
