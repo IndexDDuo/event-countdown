@@ -11,7 +11,7 @@ export default function App() {
   const Stack = createNativeStackNavigator();
 
   // handling modal
-  const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState(true);
 
   useEffect(() => {
     console.log(`modalVisible has been updated to ${modalVisible}`);
