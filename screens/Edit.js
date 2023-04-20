@@ -13,11 +13,14 @@ async function cacheFonts(fonts) {
 export default function Edit({ navigation }) {
   cacheFonts([FontAwesome.font]);
 
-  //handling the all day? checkbox
+  // handling the all day? checkbox
   const [allDayChecked, setAllDayChecked] = useState(false);
 
-  //handling the render checkbox
+  // handling the reminder checkbox
   const [reminderChecked, setReminderChecked] = useState(false);
+
+  // handling modal
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <SafeAreaView>
