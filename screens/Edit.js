@@ -24,19 +24,15 @@ export default function Edit({ navigation, route }) {
 
   const { modalVisible, setModalVisible } = route.params;
 
-  useEffect(() => {
-    console.log(`Edit.js ${modalVisible}`);
-  }, [modalVisible, setModalVisible]);
-
   // handling the all day? checkbox
   const [allDayChecked, setAllDayChecked] = useState(false);
 
   // handling the reminder checkbox
   const [reminderChecked, setReminderChecked] = useState(false);
 
-  useEffect(() => {
-    console.log(`save button is pressed. edit.js ${modalVisible}`);
-  }, [modalVisible, setModalVisible]);
+  // useEffect(() => {
+  //   console.log(`save button is pressed. edit.js ${modalVisible}`);
+  // }, [modalVisible, setModalVisible]);
 
   return (
     <SafeAreaView>
@@ -56,7 +52,7 @@ export default function Edit({ navigation, route }) {
               style={[styles.button, styles.buttonClose]}
               onPress={() => {
                 setModalVisible(false);
-                navigation.navigate("Edit", { modalVisible: false });
+                navigation.navigate("Home");
               }}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
