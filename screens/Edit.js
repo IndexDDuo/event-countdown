@@ -22,9 +22,9 @@ async function cacheFonts(fonts) {
 export default function Edit({ navigation, route }) {
   cacheFonts([FontAwesome.font]);
 
-  // const { setModalVisible } = route.params; dd
+  const { modalVisible, setModalVisible } = route.params;
 
-  const [modalVisible, setModalVisible] = useState(false);
+  // const [modalVisible, setModalVisible] = useState(false);
 
   // handling the all day? checkbox
   const [allDayChecked, setAllDayChecked] = useState(false);
@@ -33,9 +33,6 @@ export default function Edit({ navigation, route }) {
   const [reminderChecked, setReminderChecked] = useState(false);
 
   // handling modal across files
-  function toggleModalVisibility(setModalVisible) {
-    setModalVisible((prevModalVisible) => !prevModalVisible);
-  }
 
   return (
     <SafeAreaView>

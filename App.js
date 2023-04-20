@@ -12,6 +12,7 @@ export default function App() {
 
   // handling modal
   const [modalVisible, setModalVisible] = useState(false);
+
   function toggleModalVisibility(setModalVisible) {
     setModalVisible((prevModalVisible) => !prevModalVisible);
   }
@@ -48,7 +49,10 @@ export default function App() {
               ></Button>
             ),
           })}
-          initialParams={{ setModalVisible: toggleModalVisibility }}
+          initialParams={[
+            { setModalVisible: toggleModalVisibility },
+            modalVisible,
+          ]}
         />
       </Stack.Navigator>
     </NavigationContainer>
