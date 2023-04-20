@@ -39,10 +39,11 @@ export default function App() {
               <Button
                 title="Save"
                 onPress={() => {
-                  setModalVisible(true);
-                  console.log(
-                    `save button is pressed. modalVisable is set to ${modalVisible}`
-                  );
+                  setModalVisible(true, () => {
+                    console.log(
+                      `save button is pressed. modalVisable is set to ${modalVisible}`
+                    );
+                  });
                 }}
               ></Button>
             ),
