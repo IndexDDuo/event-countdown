@@ -51,6 +51,7 @@ const handleSave = (
   setModalVisible(true);
   console.log(`save button is pressed. app.js  ${modalVisible}`);
   navigation.navigate("Edit", { modalVisible: true });
+  setEventData(eventData);
   console.log(eventData);
   const eventObject = {
     eventName: eventData.eventName,
