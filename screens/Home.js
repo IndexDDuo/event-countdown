@@ -18,13 +18,16 @@ export default function Home({ navigation }) {
 
   const eventDataArray = eventData;
 
-  AsyncStorage.getAllKeys()
-    .then((keys) => {
-      return AsyncStorage.multiGet(keys);
-    })
-    .then((items) => {
+  const logAllItems = async () => {
+    try {
+      const keys = await AsyncStorage.getAllKeys();
+      const items = await AsyncStorage.multiGet(keys);
       console.log("All items:", items);
-    });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  logAllItems();
 
   const TaskDisplay = ({ name, date }) => (
     <View>
