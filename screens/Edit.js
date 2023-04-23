@@ -70,8 +70,9 @@ export default function Edit({ navigation, route }) {
             checked={allDayChecked}
             onPress={() => {
               setAllDayChecked(!allDayChecked);
+              setCopyData({ ...copyData, eventReminder: !allDayChecked });
               setEventData({
-                ...eventData,
+                ...copyData,
                 eventAllDay: !allDayChecked,
               });
             }}
@@ -81,8 +82,9 @@ export default function Edit({ navigation, route }) {
             checked={reminderChecked}
             onPress={() => {
               setReminderChecked(!reminderChecked);
+              setCopyData({ ...copyData, eventReminder: !reminderChecked });
               setEventData({
-                ...eventData,
+                ...copyData,
                 eventReminder: !reminderChecked,
               });
             }}
@@ -91,7 +93,7 @@ export default function Edit({ navigation, route }) {
           <TextInput
             style={styles.input}
             onChangeText={(e) => {
-              setCopyData({ ...copyData, eventDescription: e  });
+              setCopyData({ ...copyData, eventDescription: e });
               setEventData({ ...copyData, eventDescription: e });
             }}
           ></TextInput>
