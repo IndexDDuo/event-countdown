@@ -14,6 +14,7 @@ import React, { useState, useCallback, useEffect, useMemo } from "react";
 import { StackActions } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ButtonGroup } from "react-native-elements";
+import DateTimePicker from "react-datetime-picker";
 
 async function cacheFonts(fonts) {
   return fonts.map(async (font) => await Font.loadAsync(font));
@@ -42,6 +43,8 @@ export default function Edit({ navigation, route }) {
   //   console.log("Event data:", eventData);
   // }, [eventData]);
 
+  const [value, onChange] = useState(new Date());
+
   return (
     <SafeAreaView>
       <ScrollView>
@@ -57,6 +60,7 @@ export default function Edit({ navigation, route }) {
             }}
           ></TextInput>
           <Text>Event Date:</Text>
+          <DateTimePicker onChange={onChange} value={value} />
           <TextInput
             style={styles.input}
             onChangeText={(e) => {
