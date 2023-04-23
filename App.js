@@ -23,8 +23,8 @@ const handleSave = (
   console.log(`save button is pressed. app.js  ${modalVisible}`);
   navigation.navigate("Edit", { modalVisible: true });
   setEventData(eventData);
-  console.log(eventData);
-  readFile("eventData.json");
+  // console.log(eventData);
+  // readFile("eventData.json");
 };
 
 export default function App() {
