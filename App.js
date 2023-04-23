@@ -7,6 +7,7 @@ import Home from "./screens/Home.js";
 import Detail from "./screens/Detail.js";
 import Edit from "./screens/Edit.js";
 import { readFile } from "./saveData.js";
+import eventData from "../eventData.json";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,7 @@ const handleSave = (
   navigation.navigate("Edit", { modalVisible: true });
   setEventData(eventData);
   console.log(eventData);
+  readFile(eventData.json);
 };
 
 export default function App() {
