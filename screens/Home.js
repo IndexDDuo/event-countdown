@@ -15,7 +15,7 @@ async function cacheFonts(fonts) {
 export default function Home({ navigation }) {
   cacheFonts([FontAwesome.font]);
 
-  const eventDataArray = eventData;
+  // const eventDataArray = eventData;
 
   const TaskDisplay = ({ name, date }) => (
     <View>
@@ -29,13 +29,13 @@ export default function Home({ navigation }) {
   return (
     <SafeAreaView>
       <View>
-        <Text>This is Home Screen</Text>
+        {/* <Text>This is Home Screen</Text>
         <FlatList
           data={eventDataArray}
           renderItem={({ item }) => (
             <TaskDisplay name={item.eventName} date={item.eventDate} />
           )}
-        />
+        /> */}
       </View>
     </SafeAreaView>
   );
