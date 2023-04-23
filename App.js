@@ -51,6 +51,25 @@ export default function App() {
     console.log(`App.js ${modalVisible}`);
   }, [modalVisible]);
 
+  const storeData = async (value) => {
+    try {
+      await AsyncStorage.setItem("loginData", JSON.stringify(value));
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const getData = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem("loginData");
+      return jsonValue != null ? JSON.parse(jsonValue) : null;
+    } catch (e) {
+      // error reading value
+      console.log(e);
+    }
+  };
+  let loginData = [{ username: "test", password: "Test1@" }];
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
