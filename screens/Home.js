@@ -44,13 +44,16 @@ export default function Home({ navigation }) {
   );
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <View>
         <Text>This is Home Screen</Text>
         <FlatList
-          data={JSON.parse(events)}
+          data={events}
           renderItem={({ item }) => (
-            <TaskDisplay name={item[0].eventName} date={item[0].eventDate} />
+            <TaskDisplay
+              name={JSON.parse(item[1]).eventName}
+              date={JSON.parse(item[1]).eventDate}
+            />
           )}
         />
       </View>
