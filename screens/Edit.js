@@ -50,8 +50,10 @@ export default function Edit({ navigation, route }) {
           <TextInput
             style={styles.input}
             onChangeText={(e) => {
+              setCopyData({ ...copyData, eventName: e });
               setEventData({ ...eventData, eventName: e });
-              // console.log("eventName" + e);
+              console.log("copy" + copyData);
+              console.log("event" + eventData);
             }}
           ></TextInput>
           <Text>Event Date:</Text>
