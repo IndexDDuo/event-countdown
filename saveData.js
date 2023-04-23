@@ -19,3 +19,12 @@ import RNFS from "react-native-fs";
 // 	contents: string,
 // 	encodingOrOptions?: string
 // ): Promise<void>
+
+export const readfile = async (path) => {
+  try {
+    const content = await RNFS.readFile(path, "utf8");
+    return JSON.parse(content);
+  } catch (err) {
+    console.log(err);
+  }
+};
