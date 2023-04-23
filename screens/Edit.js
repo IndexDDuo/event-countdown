@@ -51,15 +51,18 @@ export default function Edit({ navigation, route }) {
             style={styles.input}
             onChangeText={(e) => {
               setCopyData({ ...copyData, eventName: e });
-              setEventData({ ...eventData, eventName: e });
-              console.log("copy" + copyData);
-              console.log("event" + eventData);
+              setEventData({ ...copyData, eventName: e });
+              console.log("copy" + copyData.eventName);
+              console.log("event" + eventData.eventName);
             }}
           ></TextInput>
           <Text>Event Date:</Text>
           <TextInput
             style={styles.input}
-            onChangeText={(e) => setEventData({ ...eventData, eventDate: e })}
+            onChangeText={(e) => {
+              setCopyData({ ...copyData, eventDate: e });
+              setEventData({ ...copyData, eventDate: e });
+            }}
           ></TextInput>
 
           <CheckBox
