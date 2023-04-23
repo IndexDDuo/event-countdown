@@ -48,12 +48,9 @@ export default function Home({ navigation }) {
       <View>
         <Text>This is Home Screen</Text>
         <FlatList
-          data={events}
+          data={JSON.parse(events)}
           renderItem={({ item }) => (
-            <TaskDisplay
-              name={JSON.parse(item[0][1]).eventName}
-              date={item[0].eventDate}
-            />
+            <TaskDisplay name={item[0].eventName} date={item[0].eventDate} />
           )}
         />
       </View>
