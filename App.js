@@ -19,7 +19,7 @@ const storeData = async (key, value) => {
   }
 };
 
-const getData = async (key) => {
+export const getData = async (key) => {
   try {
     const jsonValue = await AsyncStorage.getItem(key);
     return jsonValue != null ? JSON.parse(jsonValue) : null;
@@ -51,7 +51,7 @@ const handleSave = async (
   await storeData("key", eventObject);
   const savedEvent = await getData("key");
   setEventData(savedEvent);
-  console.log("saved event" + savedEvent);
+  console.log("saved event" + JSON.stringify(savedEvent));
 };
 
 export const eventData = [
