@@ -19,15 +19,23 @@ const storeData = async (key, value) => {
   }
 };
 
-export const getData = async (key) => {
-  try {
-    const jsonValue = await AsyncStorage.getItem(key);
-    return jsonValue != null ? JSON.parse(jsonValue) : null;
-  } catch (e) {
-    // error reading value
-    console.log(e);
-  }
-};
+//  const getData = async (key) => {
+//   try {
+//     const jsonValue = await AsyncStorage.getItem(key);
+//     return jsonValue != null ? JSON.parse(jsonValue) : null;
+//   } catch (e) {
+//     // error reading value
+//     console.log(e);
+//   }
+// };
+
+AsyncStorage.getAllKeys()
+  .then((keys) => {
+    return AsyncStorage.multiGet(keys);
+  })
+  .then((items) => {
+    console.log("All items:", items);
+  });
 
 // handling modal
 const handleSave = async (
