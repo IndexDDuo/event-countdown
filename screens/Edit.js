@@ -34,6 +34,7 @@ export default function Edit({ navigation, route }) {
   );
 
   useEffect(() => {
+    setEventData(eventData);
     setReminderChecked(reminderChecked);
     setAllDayChecked(allDayChecked);
   }, [
