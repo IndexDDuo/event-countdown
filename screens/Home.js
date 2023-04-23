@@ -18,17 +18,20 @@ export default function Home({ navigation }) {
 
   const [events, setEvents] = useState([]);
 
-  const logAllItems = async () => {
-    try {
-      const keys = await AsyncStorage.getAllKeys();
-      const items = await AsyncStorage.multiGet(keys);
-      console.log("All items:", items);
-      setEvents(items);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-  logAllItems();
+  //stop infinity loooooping
+  useEffect(() => {
+    const logAllItems = async () => {
+      try {
+        const keys = await AsyncStorage.getAllKeys();
+        const items = await AsyncStorage.multiGet(keys);
+        console.log("All items:", items);
+        setEvents(items);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    logAllItems();
+  }, []);
 
   const TaskDisplay = ({ name, date }) => (
     <View>
@@ -44,7 +47,7 @@ export default function Home({ navigation }) {
       <View>
         <Text>This is Home Screen</Text>
         <FlatList
-          data={logAllItems}
+          data={events}
           renderItem={({ item }) => (
             <TaskDisplay name={item[1].eventName} date={item[1].eventDate} />
           )}
