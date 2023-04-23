@@ -44,9 +44,9 @@ export default function Home({ navigation }) {
       <View>
         <Text>This is Home Screen</Text>
         <FlatList
-          data={eventDataArray}
+          data={logAllItems}
           renderItem={({ item }) => (
-            <TaskDisplay name={item.eventName} date={item.eventDate} />
+            <TaskDisplay name={item[1].eventName} date={item[1].eventDate} />
           )}
         />
       </View>
