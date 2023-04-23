@@ -33,6 +33,8 @@ export default function Edit({ navigation, route }) {
     eventData.eventReminder
   );
 
+  const [copyData, setCopyData] = useState(eventData);
+
   useEffect(() => {
     console.log(`modalVisible is ${modalVisible} in Edit.`);
   }, [setModalVisible]);
