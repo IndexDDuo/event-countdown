@@ -11,7 +11,7 @@ import eventData from "./eventData.json";
 
 const Stack = createNativeStackNavigator();
 
-// handling modal.
+// handling modal
 const handleSave = (
   modalVisible,
   setModalVisible,
