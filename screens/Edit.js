@@ -91,7 +91,8 @@ export default function Edit({ navigation, route }) {
           <TextInput
             style={styles.input}
             onChangeText={(e) => {
-              setEventData({ ...eventData, eventDescription: e });
+              setCopyData({ ...copyData, eventDescription: e  });
+              setEventData({ ...copyData, eventDescription: e });
             }}
           ></TextInput>
         </View>
