@@ -21,6 +21,24 @@ export const eventData = [
   },
 ];
 
+const storeData = async (key, value) => {
+  try {
+    await AsyncStorage.setItem(key, JSON.stringify(value));
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const getData = async (key) => {
+  try {
+    const jsonValue = await AsyncStorage.getItem(key);
+    return jsonValue != null ? JSON.parse(jsonValue) : null;
+  } catch (e) {
+    // error reading value
+    console.log(e);
+  }
+};
+
 // handling modal.
 const handleSave = (
   modalVisible,
@@ -34,6 +52,16 @@ const handleSave = (
   navigation.navigate("Edit", { modalVisible: true });
   setEventData(eventData);
   console.log(eventData);
+  const eventObject = {
+    eventName: eventData.eventName,
+    eventDate: eventData.eventDate,
+    allDay: eventData.eventAllDay,
+    reminder: eventData.eventReminder,
+    reminderTime: "",
+    eventDesc: eventData.eventDescription,
+  };
+  storeData("key", eventObject);
+  getData("key");
 };
 
 export default function App() {
@@ -50,33 +78,6 @@ export default function App() {
   useEffect(() => {
     console.log(`App.js ${modalVisible}`);
   }, [modalVisible]);
-
-  const storeData = async (key, value) => {
-    try {
-      await AsyncStorage.setItem(key, JSON.stringify(value));
-    } catch (e) {
-      console.log(e);
-    }
-  };
-  const eventObject = {
-    eventName: "Summer",
-    eventDate: "2023-05-12T13:37:27+00:00",
-    allDay: true,
-    reminder: true,
-    reminderTime: "2023-05-10T13:37:27+00:00",
-    eventDesc: "It's summer time!",
-  };
-  storeData("key", eventObject);
-  const getData = async () => {
-    try {
-      const jsonValue = await AsyncStorage.getItem("eventData");
-      return jsonValue != null ? JSON.parse(jsonValue) : null;
-    } catch (e) {
-      // error reading value
-      console.log(e);
-    }
-  };
-  let loginData = [{ username: "test", password: "Test1@" }];
 
   return (
     <NavigationContainer>
