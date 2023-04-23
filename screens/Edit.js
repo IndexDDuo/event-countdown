@@ -46,7 +46,7 @@ export default function Edit({ navigation, route }) {
             style={styles.input}
             onChangeText={(e) => {
               setEventData({ ...eventData, eventName: e });
-              console.log("eventName" + eventData.eventName.value);
+              console.log("eventName" + eventData.eventName);
             }}
           ></TextInput>
           <Text>Event Date:</Text>
