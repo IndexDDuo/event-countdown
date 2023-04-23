@@ -47,9 +47,17 @@ export default function Edit({ navigation, route }) {
       <ScrollView>
         <View>
           <Text>Event Name:</Text>
-          <TextInput style={styles.input}></TextInput>
+          <TextInput
+            style={styles.input}
+            onChangeText={(e) => {
+              setEventData({ ...eventData, eventName: e });
+            }}
+          ></TextInput>
           <Text>Event Date:</Text>
-          <TextInput style={styles.input}></TextInput>
+          <TextInput
+            style={styles.input}
+            onChangeText={(e) => setEventData({ ...eventData, eventDate: e })}
+          ></TextInput>
 
           <CheckBox
             title={"All day?"}
