@@ -18,6 +18,8 @@ export default function Home({ navigation }) {
 
   const [events, setEvents] = useState([]);
 
+  var event2 = [];
+
   //stop infinity loooooping
   useEffect(() => {
     const logAllItems = async () => {
@@ -27,15 +29,13 @@ export default function Home({ navigation }) {
         console.log("All events:", items);
         console.log(JSON.parse(items[0][1]).eventName);
         setEvents(items);
+        event2 += items;
+        console.log(event2);
       } catch (e) {
         console.log(e);
       }
     };
     logAllItems();
-    const mappingEvents = events.map((e) => {
-      return JSON.parse(e[0][1]);
-    });
-    console.log("events" + mappingEvents);
   }, []);
 
   const TaskDisplay = ({ name, date }) => (
