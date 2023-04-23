@@ -44,7 +44,11 @@ export default function Edit({ navigation, route }) {
   // }, [eventData]);
 
   const [value, onChange] = useState(new Date());
+  const [time, setTime] = useState(new Date());
 
+  const handleTimeChange = (time) => {
+    setTime(time);
+  };
   return (
     <SafeAreaView>
       <ScrollView>
@@ -100,11 +104,13 @@ export default function Edit({ navigation, route }) {
             }}
           />
           <DateTimePicker
-            onChange={onChange}
-            value={value}
+            onChange={handleTimeChange}
+            value={time}
             dateFormat={false}
             showTimeSelect={true}
+            timeFormat={"HH:mm"}
           />
+
           <Text>Event Description:</Text>
           <TextInput
             style={styles.input}
