@@ -29,8 +29,8 @@ export default function Home({ navigation }) {
         console.log("All events:", items);
         console.log(JSON.parse(items[0][1]).eventName);
         setEvents(items);
-        event2 += items;
-        console.log(event2);
+        event2.push(JSON.parse(items[0][1]).eventName);
+        console.log("evt2: " + event2);
       } catch (e) {
         console.log(e);
       }
