@@ -32,6 +32,10 @@ export default function Home({ navigation }) {
       }
     };
     logAllItems();
+    const mappingEvents = events.map((e) => {
+      return JSON.parse(e[0][1]);
+    });
+    console.log("events" + mappingEvents);
   }, []);
 
   const TaskDisplay = ({ name, date }) => (
