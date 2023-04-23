@@ -16,14 +16,14 @@ async function cacheFonts(fonts) {
 export default function Home({ navigation }) {
   cacheFonts([FontAwesome.font]);
 
-  const eventDataArray = eventData;
+  const [events, setEvents] = useState([]);
 
   const logAllItems = async () => {
     try {
       const keys = await AsyncStorage.getAllKeys();
       const items = await AsyncStorage.multiGet(keys);
       console.log("All items:", items);
-      return items;
+      setEvents(items);
     } catch (e) {
       console.log(e);
     }
