@@ -29,8 +29,7 @@
     "react-scripts": "^5.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0",
-    "@react-native-windows/cli": "^0.71.4"
+    "@babel/core": "^7.20.0"
   },
   "private": true
 }
