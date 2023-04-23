@@ -51,14 +51,22 @@ export default function App() {
     console.log(`App.js ${modalVisible}`);
   }, [modalVisible]);
 
-  const storeData = async (value) => {
+  const storeData = async (key, value) => {
     try {
-      await AsyncStorage.setItem("eventData", JSON.stringify(value));
+      await AsyncStorage.setItem(key, JSON.stringify(value));
     } catch (e) {
       console.log(e);
     }
   };
-
+  const eventObject = {
+    eventName: "Summer",
+    eventDate: "2023-05-12T13:37:27+00:00",
+    allDay: true,
+    reminder: true,
+    reminderTime: "2023-05-10T13:37:27+00:00",
+    eventDesc: "It's summer time!",
+  };
+  storeData("key", eventObject);
   const getData = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem("eventData");
