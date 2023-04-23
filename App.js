@@ -6,11 +6,31 @@ import React, { useState, useCallback, useEffect, useMemo } from "react";
 import Home from "./screens/Home.js";
 import Detail from "./screens/Detail.js";
 import Edit from "./screens/Edit.js";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Stack = createNativeStackNavigator();
 
+const storeData = async (key, value) => {
+  try {
+    await AsyncStorage.setItem(key, JSON.stringify(value));
+    console.log("stored!");
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const getData = async (key) => {
+  try {
+    const jsonValue = await AsyncStorage.getItem(key);
+    return jsonValue != null ? JSON.parse(jsonValue) : null;
+  } catch (e) {
+    // error reading value
+    console.log(e);
+  }
+};
+
 // handling modal
-const handleSave = (
+const handleSave = async (
   modalVisible,
   setModalVisible,
   navigation,
@@ -20,8 +40,18 @@ const handleSave = (
   setModalVisible(true);
   console.log(`save button is pressed. app.js  ${modalVisible}`);
   navigation.navigate("Edit", { modalVisible: true });
-  setEventData(eventData);
-  console.log(eventData);
+  const eventObject = {
+    eventName: eventData.eventName,
+    eventDate: eventData.eventDate,
+    allDay: eventData.eventAllDay,
+    reminder: eventData.eventReminder,
+    reminderTime: "",
+    eventDesc: eventData.eventDescription,
+  };
+  await storeData("key", eventObject);
+  const savedEvent = await getData("key");
+  setEventData(savedEvent);
+  console.log(savedEvent);
 };
 
 export const eventData = [
