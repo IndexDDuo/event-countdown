@@ -4255,9 +4255,9 @@
   "version" "1.4.4"
 
 "expo@*", "expo@~48.0.11":
-  "integrity" "sha512-KX1RCHhdhdT4DjCeRqYJpZXhdCTuqxHHdNIRoFkmCgkUARYlZbB+Y1U8/KMz8fBAlFoEq99cF/KyRr87VAxRCw=="
-  "resolved" "https://registry.npmjs.org/expo/-/expo-48.0.11.tgz"
-  "version" "48.0.11"
+  "integrity" "sha512-DjHYxIHOEvsM+yd2JFnRXtogTZKYWVhyT76Q8CKz91cdM7coXPtTAC23dj9nHx6aKP8RmHnpr902lY5uYPP83A=="
+  "resolved" "https://registry.npmjs.org/expo/-/expo-48.0.12.tgz"
+  "version" "48.0.12"
   dependencies:
     "@babel/runtime" "^7.20.0"
     "@expo/cli" "0.7.0"
