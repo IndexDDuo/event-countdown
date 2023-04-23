@@ -53,20 +53,20 @@ const handleSave = (
   navigation.navigate("Edit", { modalVisible: true });
   setEventData(eventData);
   console.log(eventData);
-  const eventObject = {
-    eventName: eventData.eventName,
-    eventDate: eventData.eventDate,
-    allDay: eventData.eventAllDay,
-    reminder: eventData.eventReminder,
-    reminderTime: "",
-    eventDesc: eventData.eventDescription,
-  };
+  // const eventObject = {
+  //   eventName: eventData.eventName,
+  //   eventDate: eventData.eventDate,
+  //   allDay: eventData.eventAllDay,
+  //   reminder: eventData.eventReminder,
+  //   reminderTime: "",
+  //   eventDesc: eventData.eventDescription,
+  // };
 
-  async function savedata() {
-    await storeData("key", eventObject);
-    const savedEvent = await getData("key");
-    console.log("saved event: ", JSON.stringify(savedEvent));
-  }
+  // async function savedata() {
+  //   await storeData("key", eventObject);
+  //   const savedEvent = await getData("key");
+  //   console.log("saved event: ", JSON.stringify(savedEvent));
+  // }
 
   // setEventData({
   //   eventName: "",
