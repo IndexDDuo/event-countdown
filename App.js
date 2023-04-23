@@ -80,6 +80,10 @@ const handleSave = (
 export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
 
+  useEffect(() => {
+    console.log("Event data:", eventData);
+  }, [eventData]);
+
   const [eventData, setEventData] = useState({
     eventName: "",
     eventDate: "",
