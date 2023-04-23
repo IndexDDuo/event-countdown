@@ -51,10 +51,7 @@ export default function Home({ navigation }) {
         <FlatList
           data={events}
           renderItem={({ item }) => (
-            <TaskDisplay
-              name={JSON.parse(item[1]).eventName}
-              date={JSON.parse(item[1]).eventDate}
-            />
+            <TaskDisplay name={item[1].eventName} date={item[1].eventDate} />
           )}
         />
       </View>

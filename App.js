@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 
 const storeData = async (key, value) => {
   try {
-    await AsyncStorage.setItem(key, JSON.stringify(value));
+    await AsyncStorage.setItem(key, value);
     console.log("stored!");
   } catch (e) {
     console.log(e);
