@@ -103,7 +103,6 @@ export default function Edit({ navigation, route }) {
           <DateTimePicker
             onChange={time}
             value={val}
-            dateFormat={false}
             showTimeSelect={true}
             format={"h:mm:ss a"}
             disableCalendar={true}
