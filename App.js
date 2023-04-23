@@ -6,41 +6,12 @@ import React, { useState, useCallback, useEffect, useMemo } from "react";
 import Home from "./screens/Home.js";
 import Detail from "./screens/Detail.js";
 import Edit from "./screens/Edit.js";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { readFile } from "./saveData.js";
+import eventData from "./eventData.json";
 
 const Stack = createNativeStackNavigator();
 
-export const eventData = [
-  {
-    eventName: "Summer",
-    eventDate: "2023-05-12T13:37:27+00:00",
-    allDay: true,
-    reminder: true,
-    reminderTime: "2023-05-10T13:37:27+00:00",
-    eventDesc: "It's summer time!",
-  },
-];
-
-const storeData = async (key, value) => {
-  try {
-    await AsyncStorage.setItem(key, JSON.stringify(value));
-    console.log("stored!");
-  } catch (e) {
-    console.log(e);
-  }
-};
-
-const getData = async (key) => {
-  try {
-    const jsonValue = await AsyncStorage.getItem(key);
-    return jsonValue != null ? JSON.parse(jsonValue) : null;
-  } catch (e) {
-    // error reading value
-    console.log(e);
-  }
-};
-
-// handling modal.
+// handling modal
 const handleSave = (
   modalVisible,
   setModalVisible,
@@ -53,36 +24,11 @@ const handleSave = (
   navigation.navigate("Edit", { modalVisible: true });
   setEventData(eventData);
   console.log(eventData);
-  // const eventObject = {
-  //   eventName: eventData.eventName,
-  //   eventDate: eventData.eventDate,
-  //   allDay: eventData.eventAllDay,
-  //   reminder: eventData.eventReminder,
-  //   reminderTime: "",
-  //   eventDesc: eventData.eventDescription,
-  // };
-
-  // async function savedata() {
-  //   await storeData("key", eventObject);
-  //   const savedEvent = await getData("key");
-  //   console.log("saved event: ", JSON.stringify(savedEvent));
-  // }
-
-  // setEventData({
-  //   eventName: "",
-  //   eventDate: "",
-  //   eventAllDay: false,
-  //   eventReminder: false,
-  //   eventDescription: "",
-  // });
+  readFile("eventData.json");
 };
 
 export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
-
-  useEffect(() => {
-    console.log("Event data:", eventData);
-  }, [eventData]);
 
   const [eventData, setEventData] = useState({
     eventName: "",
