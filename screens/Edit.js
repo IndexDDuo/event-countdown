@@ -34,19 +34,6 @@ export default function Edit({ navigation, route }) {
   );
 
   useEffect(() => {
-    setEventData(eventData);
-    setReminderChecked(reminderChecked);
-    setAllDayChecked(allDayChecked);
-  }, [
-    setReminderChecked,
-    setAllDayChecked,
-    allDayChecked,
-    reminderChecked,
-    eventData.eventAllDay,
-    eventData.eventReminder,
-  ]);
-
-  useEffect(() => {
     console.log(`modalVisible is ${modalVisible} in Edit.`);
   }, [setModalVisible]);
 
@@ -69,7 +56,7 @@ export default function Edit({ navigation, route }) {
 
           <CheckBox
             title={"All day?"}
-            checked={eventData.eventAllDay}
+            checked={allDayChecked}
             onPress={() => {
               setAllDayChecked(!allDayChecked);
               setEventData({
@@ -80,7 +67,7 @@ export default function Edit({ navigation, route }) {
           />
           <CheckBox
             title={"Reminder?"}
-            checked={eventData.eventReminder}
+            checked={reminderChecked}
             onPress={() => {
               setReminderChecked(!reminderChecked);
               setEventData({
