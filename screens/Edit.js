@@ -62,12 +62,22 @@ export default function Edit({ navigation, route }) {
           <CheckBox
             title={"All day?"}
             checked={allDayChecked}
-            onPress={() => setAllDayChecked(!allDayChecked)}
+            onPress={() =>
+              setEventData({
+                ...eventData,
+                eventAllDay: !eventData.eventAllDay,
+              })
+            }
           />
           <CheckBox
             title={"Reminder?"}
             checked={reminderChecked}
-            onPress={() => setReminderChecked(!reminderChecked)}
+            onPress={() =>
+              setEventData({
+                ...eventData,
+                eventReminder: !eventData.eventReminder,
+              })
+            }
           />
           <Text>Event Description:</Text>
           <TextInput style={styles.input}></TextInput>
