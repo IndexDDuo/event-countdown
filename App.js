@@ -24,7 +24,7 @@ const handleSave = (
   navigation.navigate("Edit", { modalVisible: true });
   setEventData(eventData);
   console.log(eventData);
-  readFile("eventData.json");
+  // readFile("eventData.json");
 };
 
 export default function App() {
