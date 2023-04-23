@@ -28,7 +28,7 @@ export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
 
   const [eventData, setEventData] = useState({
-    eventname: "",
+    eventName: "",
     eventDate: "",
     eventAllDay: false,
     eventReminder: false,
