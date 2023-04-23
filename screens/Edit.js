@@ -105,6 +105,8 @@ export default function Edit({ navigation, route }) {
             value={val}
             dateFormat={false}
             showTimeSelect={true}
+            format={"h:mm:ss a"}
+            disableCalendar={true}
           />
           <Text>Event Description:</Text>
           <TextInput
