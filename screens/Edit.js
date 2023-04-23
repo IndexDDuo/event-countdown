@@ -61,7 +61,7 @@ export default function Edit({ navigation, route }) {
 
           <CheckBox
             title={"All day?"}
-            checked={allDayChecked}
+            checked={eventData.eventAllDay}
             onPress={() =>
               setEventData({
                 ...eventData,
@@ -71,7 +71,7 @@ export default function Edit({ navigation, route }) {
           />
           <CheckBox
             title={"Reminder?"}
-            checked={reminderChecked}
+            checked={eventData.eventReminder}
             onPress={() =>
               setEventData({
                 ...eventData,
@@ -80,7 +80,12 @@ export default function Edit({ navigation, route }) {
             }
           />
           <Text>Event Description:</Text>
-          <TextInput style={styles.input}></TextInput>
+          <TextInput
+            style={styles.input}
+            onChangeText={(e) => {
+              setEventData({ ...eventData, eventDescription: e });
+            }}
+          ></TextInput>
         </View>
       </ScrollView>
 
