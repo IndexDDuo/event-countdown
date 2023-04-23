@@ -68,13 +68,13 @@ const handleSave = (
     console.log("saved event: ", JSON.stringify(savedEvent));
   }
 
-  setEventData({
-    eventName: "",
-    eventDate: "",
-    eventAllDay: false,
-    eventReminder: false,
-    eventDescription: "",
-  });
+  // setEventData({
+  //   eventName: "",
+  //   eventDate: "",
+  //   eventAllDay: false,
+  //   eventReminder: false,
+  //   eventDescription: "",
+  // });
 };
 
 export default function App() {
