@@ -24,7 +24,7 @@ export default function Home({ navigation }) {
       try {
         const keys = await AsyncStorage.getAllKeys();
         const items = await AsyncStorage.multiGet(keys);
-        console.log("All items:", items);
+        console.log("All events:", items);
         setEvents(items);
       } catch (e) {
         console.log(e);
