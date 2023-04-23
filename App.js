@@ -24,6 +24,17 @@ const handleSave = (
   console.log(eventData);
 };
 
+export const eventData = [
+  {
+    eventName: "Summer",
+    eventDate: "2023-05-12T13:37:27+00:00",
+    allDay: true,
+    reminder: true,
+    reminderTime: "2023-05-10T13:37:27+00:00",
+    eventDesc: "It's summer time!",
+  },
+];
+
 export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
 
