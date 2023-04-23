@@ -25,7 +25,7 @@ export default function Home({ navigation }) {
         const keys = await AsyncStorage.getAllKeys();
         const items = await AsyncStorage.multiGet(keys);
         console.log("All events:", items);
-        console.log(JSON.parse(items[0][1]));
+        console.log(JSON.parse(items[0][1]).eventName);
         setEvents(items);
       } catch (e) {
         console.log(e);
@@ -51,7 +51,10 @@ export default function Home({ navigation }) {
         <FlatList
           data={events}
           renderItem={({ item }) => (
-            <TaskDisplay name={item[1].eventName} date={item[1].eventDate} />
+            <TaskDisplay
+              name={JSON.parse(item[1]).eventName}
+              date={item[1].eventDate}
+            />
           )}
         />
       </View>
