@@ -48,7 +48,8 @@ const handleSave = async (
     reminderTime: "",
     eventDesc: eventData.eventDescription,
   };
-  await storeData("key", eventObject);
+  const specialKey = Date.now().toString();
+  await storeData(specialKey, eventObject);
   const savedEvent = await getData("key");
   setEventData(savedEvent);
   console.log("saved event" + JSON.stringify(savedEvent));
