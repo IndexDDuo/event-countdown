@@ -53,7 +53,7 @@ export default function Home({ navigation }) {
           renderItem={({ item }) => (
             <TaskDisplay
               name={JSON.parse(item[1]).eventName}
-              date={item[1].eventDate}
+              date={JSON.parse(item[1]).eventDate}
             />
           )}
         />
