@@ -15,7 +15,7 @@ import { StackActions } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ButtonGroup } from "react-native-elements";
 import DateTimePicker from "react-datetime-picker";
-
+//https://www.npmjs.com/package/react-datetime-picker
 async function cacheFonts(fonts) {
   return fonts.map(async (font) => await Font.loadAsync(font));
 }
