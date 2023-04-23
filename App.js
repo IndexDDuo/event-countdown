@@ -61,11 +61,11 @@ const handleSave = (
     eventDesc: eventData.eventDescription,
   };
 
-  async () => {
+  async function savedata() {
     await storeData("key", eventObject);
     const savedEvent = await getData("key");
     console.log("saved event: ", JSON.stringify(savedEvent));
-  };
+  }
 
   setEventData({
     eventName: "",
