@@ -51,6 +51,7 @@ const handleSave = async (
   setModalVisible(true);
   console.log(`save button is pressed. app.js  ${modalVisible}`);
   navigation.navigate("Edit", { modalVisible: true });
+  console.log(eventData);
   const eventObject = {
     eventName: eventData.eventName,
     eventDate: eventData.eventDate,
@@ -61,8 +62,14 @@ const handleSave = async (
   };
   await storeData("key", eventObject);
   const savedEvent = await getData("key");
-  setEventData(savedEvent);
-  console.log("saved event: " + JSON.stringify(savedEvent));
+  console.log("saved event: ", JSON.stringify(savedEvent));
+  setEventData({
+    eventName: "",
+    eventDate: "",
+    eventAllDay: false,
+    eventReminder: false,
+    eventDescription: "",
+  });
 };
 
 export default function App() {
