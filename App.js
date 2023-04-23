@@ -29,13 +29,15 @@ const storeData = async (key, value) => {
 //   }
 // };
 
-AsyncStorage.getAllKeys()
-  .then((keys) => {
-    return AsyncStorage.multiGet(keys);
-  })
-  .then((items) => {
+const logAllItems = async () => {
+  try {
+    const keys = await AsyncStorage.getAllKeys();
+    const items = await AsyncStorage.multiGet(keys);
     console.log("All items:", items);
-  });
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 // handling modal
 const handleSave = async (
@@ -58,6 +60,7 @@ const handleSave = async (
   };
   const specialKey = Date.now().toString();
   await storeData(specialKey, eventObject);
+  logAllItems();
   // const savedEvent = await getData("key");
   // setEventData(savedEvent);
   // console.log("saved event" + JSON.stringify(savedEvent));
