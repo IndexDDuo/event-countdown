@@ -40,43 +40,6 @@ const getData = async (key) => {
   }
 };
 
-// handling modal.
-const handleSave = (
-  modalVisible,
-  setModalVisible,
-  navigation,
-  eventData,
-  setEventData
-) => {
-  setModalVisible(true);
-  console.log(`save button is pressed. app.js  ${modalVisible}`);
-  navigation.navigate("Edit", { modalVisible: true });
-  setEventData(eventData);
-  console.log(eventData);
-  const eventObject = {
-    eventName: eventData.eventName,
-    eventDate: eventData.eventDate,
-    allDay: eventData.eventAllDay,
-    reminder: eventData.eventReminder,
-    reminderTime: "",
-    eventDesc: eventData.eventDescription,
-  };
-
-  async function savedata() {
-    await storeData("key", eventObject);
-    const savedEvent = await getData("key");
-    console.log("saved event: ", JSON.stringify(savedEvent));
-  }
-
-  setEventData({
-    eventName: "",
-    eventDate: "",
-    eventAllDay: false,
-    eventReminder: false,
-    eventDescription: "",
-  });
-};
-
 export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -91,6 +54,43 @@ export default function App() {
   useEffect(() => {
     console.log(`App.js ${modalVisible}`);
   }, [modalVisible]);
+
+  // handling modal.
+  const handleSave = (
+    modalVisible,
+    setModalVisible,
+    navigation,
+    eventData,
+    setEventData
+  ) => {
+    setModalVisible(true);
+    console.log(`save button is pressed. app.js  ${modalVisible}`);
+    navigation.navigate("Edit", { modalVisible: true });
+    setEventData(eventData);
+    console.log(eventData);
+    const eventObject = {
+      eventName: eventData.eventName,
+      eventDate: eventData.eventDate,
+      allDay: eventData.eventAllDay,
+      reminder: eventData.eventReminder,
+      reminderTime: "",
+      eventDesc: eventData.eventDescription,
+    };
+
+    async function savedata() {
+      await storeData("key", eventObject);
+      const savedEvent = await getData("key");
+      console.log("saved event: ", JSON.stringify(savedEvent));
+    }
+
+    setEventData({
+      eventName: "",
+      eventDate: "",
+      eventAllDay: false,
+      eventReminder: false,
+      eventDescription: "",
+    });
+  };
 
   return (
     <NavigationContainer>
