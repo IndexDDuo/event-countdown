@@ -51,7 +51,7 @@ const handleSave = async (
   await storeData("key", eventObject);
   const savedEvent = await getData("key");
   setEventData(savedEvent);
-  console.log(savedEvent);
+  console.log("saved event" + savedEvent);
 };
 
 export const eventData = [
