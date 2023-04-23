@@ -27,6 +27,7 @@ export default function App() {
     eventReminder: false,
     eventDescription: "",
   });
+
   useEffect(() => {
     console.log(`App.js ${modalVisible}`);
   }, [modalVisible]);
@@ -71,6 +72,8 @@ export default function App() {
           initialParams={{
             setModalVisible: setModalVisible,
             modalVisible: modalVisible,
+            eventData: eventData,
+            setEventData: setEventData,
           }}
         />
       </Stack.Navigator>
