@@ -9,7 +9,7 @@ import Edit from "./screens/Edit.js";
 
 const Stack = createNativeStackNavigator();
 
-export const savedData = [
+export const eventData = [
   {
     eventName: "Summer",
     eventDate: "2023-05-12T13:37:27+00:00",
