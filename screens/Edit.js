@@ -34,6 +34,11 @@ export default function Edit({ navigation, route }) {
   );
 
   useEffect(() => {
+    setReminderChecked(reminderChecked);
+    setAllDayChecked(allDayChecked);
+  }, []);
+
+  useEffect(() => {
     console.log(`modalVisible is ${modalVisible} in Edit.`);
   }, [setModalVisible]);
 
