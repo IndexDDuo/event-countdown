@@ -53,7 +53,7 @@ export default function App() {
 
   const storeData = async (value) => {
     try {
-      await AsyncStorage.setItem("loginData", JSON.stringify(value));
+      await AsyncStorage.setItem("eventData", JSON.stringify(value));
     } catch (e) {
       console.log(e);
     }
@@ -61,7 +61,7 @@ export default function App() {
 
   const getData = async () => {
     try {
-      const jsonValue = await AsyncStorage.getItem("loginData");
+      const jsonValue = await AsyncStorage.getItem("eventData");
       return jsonValue != null ? JSON.parse(jsonValue) : null;
     } catch (e) {
       // error reading value
