@@ -30,7 +30,7 @@ export default function Home({ navigation }) {
         console.log(JSON.parse(items[0][1]).eventName);
         setEvents(items);
         event2.push(JSON.parse(items[0][1]));
-        console.log("evt2: " + event2.);
+        console.log("evt2: " + event2);
       } catch (e) {
         console.log(e);
       }
