@@ -38,9 +38,9 @@ export default function Edit({ navigation, route }) {
   useEffect(() => {
     console.log(`modalVisible is ${modalVisible} in Edit.`);
   }, [setModalVisible]);
-  useEffect(() => {
-    console.log("Event data:", eventData);
-  }, [eventData]);
+  // useEffect(() => {
+  //   console.log("Event data:", eventData);
+  // }, [eventData]);
 
   return (
     <SafeAreaView>
@@ -70,7 +70,7 @@ export default function Edit({ navigation, route }) {
             checked={allDayChecked}
             onPress={() => {
               setAllDayChecked(!allDayChecked);
-              setCopyData({ ...copyData, eventReminder: !allDayChecked });
+              setCopyData({ ...copyData, eventAllDay: !allDayChecked });
               setEventData({
                 ...copyData,
                 eventAllDay: !allDayChecked,
