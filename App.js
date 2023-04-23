@@ -41,7 +41,7 @@ const getData = async (key) => {
 };
 
 // handling modal.
-const handleSave = async (
+const handleSave = (
   modalVisible,
   setModalVisible,
   navigation,
@@ -60,9 +60,13 @@ const handleSave = async (
     reminderTime: "",
     eventDesc: eventData.eventDescription,
   };
-  await storeData("key", eventObject);
-  const savedEvent = await getData("key");
-  console.log("saved event: ", JSON.stringify(savedEvent));
+
+  async () => {
+    await storeData("key", eventObject);
+    const savedEvent = await getData("key");
+    console.log("saved event: ", JSON.stringify(savedEvent));
+  };
+
   setEventData({
     eventName: "",
     eventDate: "",
