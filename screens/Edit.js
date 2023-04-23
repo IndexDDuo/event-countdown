@@ -60,7 +60,13 @@ export default function Edit({ navigation, route }) {
             }}
           ></TextInput>
           <Text>Event Date:</Text>
-          <DateTimePicker onChange={onChange} value={value} />
+          <DateTimePicker
+            onChange={onChange}
+            value={value}
+            format="yyyy-MM-dd"
+            calendarIcon={null}
+            clearIcon={null}
+          />
           <TextInput
             style={styles.input}
             onChangeText={(e) => {
