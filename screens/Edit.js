@@ -32,11 +32,11 @@ export default function Edit({ navigation, route }) {
     eventDescription: "",
   });
 
-  // handling the all day? checkbox
-  const [allDayChecked, setAllDayChecked] = useState(false);
+  // // handling the all day? checkbox
+  // const [allDayChecked, setAllDayChecked] = useState(false);
 
-  // handling the reminder checkbox
-  const [reminderChecked, setReminderChecked] = useState(false);
+  // // handling the reminder checkbox
+  // const [reminderChecked, setReminderChecked] = useState(false);
 
   useEffect(() => {
     console.log(`modalVisible is ${modalVisible} in Edit.`);
