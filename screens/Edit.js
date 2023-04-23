@@ -99,6 +99,12 @@ export default function Edit({ navigation, route }) {
               });
             }}
           />
+          <DateTimePicker
+            onChange={onChange}
+            value={value}
+            dateFormat={false}
+            showTimeSelect={true}
+          />
           <Text>Event Description:</Text>
           <TextInput
             style={styles.input}
