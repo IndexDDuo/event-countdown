@@ -20,6 +20,13 @@ const handleSave = (modalVisible, setModalVisible, navigation, eventData) => {
 export default function App() {
   const [modalVisible, setModalVisible] = useState(false);
 
+  const [eventData, setEventData] = useState({
+    eventname: "",
+    eventDate: "",
+    eventAllDay: false,
+    eventReminder: false,
+    eventDescription: "",
+  });
   useEffect(() => {
     console.log(`App.js ${modalVisible}`);
   }, [modalVisible]);
@@ -54,7 +61,8 @@ export default function App() {
                     modalVisible,
                     setModalVisible,
                     navigation,
-                    eventData
+                    eventData,
+                    setEventData
                   );
                 }}
               ></Button>
