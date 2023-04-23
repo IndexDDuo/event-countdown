@@ -36,6 +36,9 @@ export default function Edit({ navigation, route }) {
   useEffect(() => {
     console.log(`modalVisible is ${modalVisible} in Edit.`);
   }, [setModalVisible]);
+  useEffect(() => {
+    console.log("Event data:", eventData);
+  }, [eventData]);
 
   return (
     <SafeAreaView>
