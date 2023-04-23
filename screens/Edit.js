@@ -61,7 +61,7 @@ export default function Edit({ navigation, route }) {
               setAllDayChecked(!allDayChecked);
               setEventData({
                 ...eventData,
-                eventAllDay: !eventData.eventAllDay,
+                eventAllDay: !allDayChecked,
               });
             }}
           />
@@ -72,7 +72,7 @@ export default function Edit({ navigation, route }) {
               setReminderChecked(!reminderChecked);
               setEventData({
                 ...eventData,
-                eventReminder: !eventData.eventReminder,
+                eventReminder: !reminderChecked,
               });
             }}
           />
