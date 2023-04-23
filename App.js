@@ -6,6 +6,7 @@ import React, { useState, useCallback, useEffect, useMemo } from "react";
 import Home from "./screens/Home.js";
 import Detail from "./screens/Detail.js";
 import Edit from "./screens/Edit.js";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Stack = createNativeStackNavigator();
 
