@@ -6,11 +6,19 @@ import React, { useState, useCallback, useEffect, useMemo } from "react";
 import Home from "./screens/Home.js";
 import Detail from "./screens/Detail.js";
 import Edit from "./screens/Edit.js";
-import fs from "fs";
 
 const Stack = createNativeStackNavigator();
 
-const savedData = [{}];
+export const savedData = [
+  {
+    eventName: "Summer",
+    eventDate: "2023-05-12T13:37:27+00:00",
+    allDay: true,
+    reminder: true,
+    reminderTime: "2023-05-10T13:37:27+00:00",
+    eventDesc: "It's summer time!",
+  },
+];
 
 // handling modal.
 const handleSave = (
