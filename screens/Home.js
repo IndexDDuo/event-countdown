@@ -127,7 +127,17 @@ export default function Home({ navigation }) {
                   // navigation.navigate("Home");
                 }}
               >
-                <Text style={styles.textStyle}>Ok</Text>
+                <Text style={styles.textStyle}>Edit</Text>
+              </Pressable>
+
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => {
+                  setModalVisible(false);
+                  // navigation.navigate("Home");
+                }}
+              >
+                <Text style={styles.textStyle}>Delete</Text>
               </Pressable>
             </View>
           </View>
