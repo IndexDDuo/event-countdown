@@ -9,6 +9,7 @@ import { ButtonGroup } from "react-native-elements";
 // import eventData from "../eventData.json";
 import { eventData, getData } from "../App";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { TouchableOpacity } from "react-native-web";
 
 async function cacheFonts(fonts) {
   return fonts.map(async (font) => await Font.loadAsync(font));
@@ -73,8 +74,10 @@ export default function Home({ navigation }) {
 
   const TaskDisplay = ({ name, date }) => (
     <View>
-      <Text>{name}</Text>
-      <Text>{checkDateCurrent(date)}</Text>
+      <TouchableOpacity>
+        <Text>{name}</Text>
+        <Text>{checkDateCurrent(date)}</Text>
+      </TouchableOpacity>
       <Text>-----------</Text>
     </View>
   );
