@@ -28,6 +28,8 @@ export default function Home({ navigation, route }) {
 
   const [events, setEvents] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
+  const [refresh, setRefresh] = useState(false);
+
   var event2 = [];
   //stop infinity loooooping
   useEffect(() => {
@@ -51,7 +53,8 @@ export default function Home({ navigation, route }) {
       }
     };
     logAllItems();
-  }, [modalVisible]);
+    setRefresh(false);
+  }, [refresh]);
 
   function calcDays(date) {
     const oneDay = 24 * 60 * 60 * 1000;
@@ -134,7 +137,11 @@ export default function Home({ navigation, route }) {
     <SafeAreaView style={styles.container}>
       <ScrollView style={{ height: "100%" }}>
         <View>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              setRefresh(true);
+            }}
+          >
             <Text style={styles.refreshStyle}>Refresh</Text>
           </TouchableOpacity>
           {checkIfEventEmpty()}
@@ -207,13 +214,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 70,
     marginBottom: 10,
     backgroundColor: "#DDDDDD",
-    borderRadius: 20,
   },
   eventNameStyle: {
     textAlign: "center",
     backgroundColor: "#CCB3AD",
     paddingVertical: 20,
     marginHorizontal: 25,
+    borderRadius: 20,
   },
   eventDateStyle: {
     textAlign: "center",
@@ -221,6 +228,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 5,
     marginTop: 2,
+    borderRadius: 5,
   },
   centeredView: {
     flex: 1,
@@ -276,10 +284,11 @@ const styles = StyleSheet.create({
   },
   refreshStyle: {
     margin: 5,
+    marginRight: 250,
     backgroundColor: "white",
     borderRadius: 20,
     padding: 5,
-    alignItems: "left",
+    textAlign: "center",
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
