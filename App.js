@@ -45,7 +45,7 @@ const handleSave = async (
     eventDate: eventData.eventDate,
     allDay: eventData.eventAllDay,
     reminder: eventData.eventReminder,
-    reminderTime: "",
+    reminderTime: eventData.eventReminderDate,
     eventDesc: eventData.eventDescription,
   };
   const specialKey = Date.now().toString();
