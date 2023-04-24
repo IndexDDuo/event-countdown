@@ -37,12 +37,12 @@ export default function Detail({ navigation, route }) {
     return (
       <div className="timer">
         <div className="text">Remaining</div>
-        <div className="value">
-          {hours}
-          {minutes}
-          {seconds}
-        </div>
-        <div className="text">Days</div>
+        <div className="value">{hours}</div>
+        <div className="text">Hours</div>
+        <div className="value">{minutes}</div>
+        <div className="text">minutes</div>
+        <div className="value">{seconds}</div>
+        <div className="text">seconds</div>
       </div>
     );
   };
@@ -53,15 +53,8 @@ export default function Detail({ navigation, route }) {
         <Text>Event Name: {name}</Text>
         <Text>Event occurs on: {date}</Text>
         <Text>Event Description: {desc}</Text>
-        <CountdownCircleTimer
-          isPlaying
-          duration={calcDays(date)}
-          colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
-          colorsTime={[10, 6, 3, 0]}
-          onComplete={() => ({ shouldRepeat: false })}
-        >
-          {renderTime}
-        </CountdownCircleTimer>
+
+        {renderTime}
       </View>
     </SafeAreaView>
   );
