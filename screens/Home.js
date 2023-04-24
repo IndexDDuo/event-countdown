@@ -42,14 +42,15 @@ export default function Home({ navigation, route }) {
         console.log("items" + items.length);
         for (var i = 0; i < items.length; i++) {
           if (items[i][0] != "EXPO_CONSTANTS_INSTALLATION_ID") {
-            const container = [JSON.parse(items[i][0])];
-            event2.push(JSON.parse(items[i][1]) + container);
+            const keyContainer = JSON.parse(items[i][0]);
+            console.log(keyContainer);
+            event2.push(JSON.parse(items[i][1]));
           }
         }
-        console.log("items after loop" + event2[0][2]);
-        console.log(JSON.parse(items[0][1]).eventName);
+        // console.log("items after loop" + event2);
+        // console.log(JSON.parse(items[0][1]).eventName);
 
-        //sort from closest to now to farthest & future date at top, past dates at the bottom
+        //sort from closet to now to farthest & future date at top, past dates at the bottom
         sortedEvent2 = event2.sort((a, b) => {
           const dateA = new Date(a.eventDate);
           const dateB = new Date(b.eventDate);
