@@ -233,7 +233,10 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   input: {
-    borderWidth: 1,
+    borderWidth: 2,
+    marginHorizontal: 5,
+    borderRadius: 15,
+    borderColor: "#008ae6",
   },
   centeredView: {
     flex: 1,
