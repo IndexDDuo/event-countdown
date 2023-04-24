@@ -81,13 +81,14 @@ export default function App() {
           options={({ navigation }) => ({
             title: "Events",
             headerRight: () => (
-              <Button
-                style={styles.addButton}
-                title="Add"
-                onPress={() => {
-                  navigation.navigate("Edit");
-                }}
-              ></Button>
+              <View style={styles.addButton}>
+                <Button
+                  title="Add"
+                  onPress={() => {
+                    navigation.navigate("Edit");
+                  }}
+                ></Button>
+              </View>
             ),
           })}
         />
@@ -133,5 +134,6 @@ const styles = StyleSheet.create({
   addButton: {
     borderRadius: 20,
     marginRight: 50,
+    backgroundColor: "blue",
   },
 });
