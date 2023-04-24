@@ -145,24 +145,30 @@ export default function Edit({ navigation, route }) {
               });
             }}
           />
-          {copyData.reminderChecked && (
-            <DateTimePicker
-              onChange={time}
-              value={val}
-              format={"y-MM-dd h:mm:ss a"}
-              isCalendarOpen={false}
-              calendarIcon={null}
-              closeWidgets={false}
-              open={true}
-              onCalendarOpen={() => {
-                setIsCalendarOpen2(true);
-              }}
-              onCalendarClose={() => {
-                setIsCalendarOpen2(false);
-              }}
-              isClockOpen={false}
-            />
-          )}
+          {useEffect(() => {
+            if (copyData.reminderChecked == true) {
+              return (
+                <DateTimePicker
+                  onChange={time}
+                  value={val}
+                  format={"y-MM-dd h:mm:ss a"}
+                  isCalendarOpen={false}
+                  calendarIcon={null}
+                  closeWidgets={false}
+                  open={true}
+                  onCalendarOpen={() => {
+                    setIsCalendarOpen2(true);
+                  }}
+                  onCalendarClose={() => {
+                    setIsCalendarOpen2(false);
+                  }}
+                  isClockOpen={false}
+                />
+              );
+            } else {
+              return null;
+            }
+          }, [copyData.reminderChecked])}
           <View style={calendarStyle2}>
             <Text>Event Description:</Text>
             <TextInput
