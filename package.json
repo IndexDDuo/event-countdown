@@ -1,13 +1,15 @@
 {
   "name": "event-countdown-app",
   "version": "1.0.0",
-  "homepage": "http://dev.github.io/expo-gh-pages",
+  "homepage": "http://IndexDDuo.github.io/event-countdown",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "deploy": "gh-pages -d web-build",
+    "predeploy": "expo export:web"
   },
   "dependencies": {
     "@expo/webpack-config": "^18.0.1",
