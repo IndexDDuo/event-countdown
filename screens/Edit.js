@@ -65,8 +65,6 @@ export default function Edit({ navigation, route }) {
             onChange={onChange}
             value={value}
             format="yyyy-MM-dd"
-            calendarIcon={null}
-            clearIcon={null}
             onCalendarOpen={() => {
               styles.spaceforCalendar.marginBottom = 50;
             }}
