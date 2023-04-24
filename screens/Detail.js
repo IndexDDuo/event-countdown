@@ -29,7 +29,7 @@ export default function Detail({ navigation, route }) {
 
   const renderTime = ({ remainingTime }) => {
     if (remainingTime === 0) {
-      return <div className="timer">Event countdown completed!</div>;
+      return <Text>Event countdown completed!</Text>;
     }
     const days = Math.floor(remainingTime / 86400);
     const hours = Math.floor((remainingTime % 86400) / 3600);
@@ -37,12 +37,12 @@ export default function Detail({ navigation, route }) {
     const seconds = remainingTime % 60;
 
     return (
-      <div className="timer">
+      <View>
         <div className="text">Remaining</div>
         <div className="value">
           {days} days {hours}:{minutes}:{seconds}
         </div>
-      </div>
+      </View>
     );
   };
 
