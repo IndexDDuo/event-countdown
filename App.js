@@ -92,11 +92,16 @@ export default function App() {
             ),
           })}
         />
-        <Stack.Screen name="Detail" component={Detail} />
+        <Stack.Screen
+          name="Detail"
+          component={Detail}
+          options={{ title: "Event Detail" }}
+        />
         <Stack.Screen
           name="Edit"
           component={Edit}
           options={({ navigation }) => ({
+            title: "Create New Event",
             headerRight: () => (
               <View style={styles.button}>
                 <Button
