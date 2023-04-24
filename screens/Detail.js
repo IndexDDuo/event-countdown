@@ -60,9 +60,9 @@ export default function Detail({ navigation, route }) {
   return (
     <SafeAreaView>
       <View>
-        <Text>Event Name: {name}</Text>
-        <Text>Event occurs on: {date}</Text>
-        <Text>Event Description: {desc}</Text>
+        <Text style={styles.name}>Event Name: {name}</Text>
+        <Text style={styles.date}>Event occurs on: {date}</Text>
+        <Text style={styles.desc}>Event Description: {desc}</Text>
         <Text>{checkReminder(reminder)}</Text>
 
         <View style={styles.timerCircle}>
@@ -97,5 +97,8 @@ const styles = StyleSheet.create({
     marginLeft: 50,
     margin: 50,
     alignContent: "center",
+  },
+  name: {
+    alignItems: "center",
   },
 });
