@@ -74,7 +74,7 @@ export default function Home({ navigation }) {
 
   const TaskDisplay = ({ name, date }) => (
     <View>
-      <TouchableOpacity>
+      <TouchableOpacity style={styles.eventStyle}>
         <Text>{name}</Text>
         <Text>{checkDateCurrent(date)}</Text>
       </TouchableOpacity>
@@ -105,5 +105,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: "bold",
+  },
+  eventStyle: {
+    borderRadius: 2,
   },
 });
