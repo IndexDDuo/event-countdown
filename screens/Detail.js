@@ -23,6 +23,15 @@ export default function Detail({ navigation, route }) {
         <Text>Event Name: {name}</Text>
         <Text>Event occurs on: {date}</Text>
         <Text>Event Description: {desc}</Text>
+        <CountdownCircleTimer
+          isPlaying
+          duration={10}
+          colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
+          colorsTime={[10, 6, 3, 0]}
+          onComplete={() => ({ shouldRepeat: true, delay: 1 })}
+        >
+          {renderTime}
+        </CountdownCircleTimer>
       </View>
     </SafeAreaView>
   );
