@@ -69,7 +69,8 @@ export default function Edit({ navigation, route }) {
             isCalendarOpen={true}
             calendarIcon={null}
           />
-          <Text style={styles.spaceforCalendar}>hi i'm spaceforCalendar</Text>
+        </View>
+        <View style={styles.spaceforCalendar}>
           <TextInput
             style={styles.input}
             onChangeText={(e) => {
@@ -77,7 +78,6 @@ export default function Edit({ navigation, route }) {
               setEventData({ ...copyData, eventDate: e });
             }}
           ></TextInput>
-
           <CheckBox
             title={"All day?"}
             checked={allDayChecked}
@@ -203,6 +203,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   spaceforCalendar: {
-    marginTop: 100,
+    marginTop: 500,
   },
 });
