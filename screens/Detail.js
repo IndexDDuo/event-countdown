@@ -20,7 +20,7 @@ export default function Detail({ navigation, route }) {
   function calcDays(date) {
     // const oneDay = 24 * 60 * 60 * 1000;
     const now = Date.now();
-    const dateDue = new Date(date);
+    const dateDue = new Date(date).getTime() / 1000;
     console.log("now: " + now + "datedue; " + dateDue);
     const diffsecs = Math.round(now - dateDue);
     console.log(diffsecs);
