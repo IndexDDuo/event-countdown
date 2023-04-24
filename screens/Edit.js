@@ -64,21 +64,20 @@ export default function Edit({ navigation, route }) {
       console.log("all day set to true");
       setEventDateFormat("y-MM-dd");
     } else {
-      console.log("all day set to falswe");
+      console.log("all day set to false");
       setEventDateFormat("y-MM-dd h:mm:ss a");
     }
   }, [copyData.eventAllDay]);
 
   useEffect(() => {
-    if (copyData.reminderChecked == true) {
+    if (copyData.eventReminder == true) {
       console.log("reminder set to true");
       setShowOptionReminder(true);
-      set;
     } else {
       setShowOptionReminder(false);
-      console.log("reminder set to falswe");
+      console.log("reminder set to false");
     }
-  }, [copyData.reminderChecked]);
+  }, [copyData.eventReminder]);
 
   return (
     <SafeAreaView>
