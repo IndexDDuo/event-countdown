@@ -68,10 +68,10 @@ export default function Edit({ navigation, route }) {
             calendarIcon={null}
             clearIcon={null}
             onCalendarOpen={() => {
-              return()
+              return <Text style={styles.spaceforCalendar}>hi</Text>;
             }}
           />
-          <Text style={styles.spaceforCalendar}></Text>
+
           <TextInput
             style={styles.input}
             onChangeText={(e) => {
@@ -203,5 +203,8 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: "center",
+  },
+  spaceforCalendar: {
+    marginBottom: 200,
   },
 });
