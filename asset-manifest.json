@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/event-countdown/static/css/main.0e67d12c.css",
+    "main.js": "/event-countdown/static/js/main.b28e7440.js",
+    "static/js/113.18e2a135.js": "/event-countdown/static/js/113.18e2a135.js",
+    "static/media/MaterialCommunityIcons.ttf": "/event-countdown/static/media/MaterialCommunityIcons.5d42b4e60858731e7b65.ttf",
+    "static/media/Fontisto.ttf": "/event-countdown/static/media/Fontisto.c0edd68811e0237502fe.ttf",
+    "static/media/Ionicons.ttf": "/event-countdown/static/media/Ionicons.3517aeaa34b2f8cd8eef.ttf",
+    "static/media/MaterialIcons.ttf": "/event-countdown/static/media/MaterialIcons.120b4c7bbd155bd0a04d.ttf",
+    "static/media/FontAwesome5_Solid.ttf": "/event-countdown/static/media/FontAwesome5_Solid.07c3313b24f7b1ca85ee.ttf",
+    "static/media/FontAwesome.ttf": "/event-countdown/static/media/FontAwesome.1e59d2330b4c6deb84b3.ttf",
+    "static/media/FontAwesome5_Brands.ttf": "/event-countdown/static/media/FontAwesome5_Brands.9e138496e8f1719c6ebf.ttf",
+    "static/media/AntDesign.ttf": "/event-countdown/static/media/AntDesign.163adab9dbd7cb1ed12a.ttf",
+    "static/media/Entypo.ttf": "/event-countdown/static/media/Entypo.fc6169344c041cffcdae.ttf",
+    "static/media/Foundation.ttf": "/event-countdown/static/media/Foundation.c0cbb004854f9c746f89.ttf",
+    "static/media/Feather.ttf": "/event-countdown/static/media/Feather.0f5d9cede2e831f3fc80.ttf",
+    "static/media/SimpleLineIcons.ttf": "/event-countdown/static/media/SimpleLineIcons.3ec13a24af3fdda11107.ttf",
+    "static/media/Octicons.ttf": "/event-countdown/static/media/Octicons.6b742a230954dc640ba2.ttf",
+    "static/media/FontAwesome5_Regular.ttf": "/event-countdown/static/media/FontAwesome5_Regular.1017bce89c72f95bcf8e.ttf",
+    "static/media/Zocial.ttf": "/event-countdown/static/media/Zocial.07fea2ac49bcc67d9a6b.ttf",
+    "favicon.ico": "/event-countdown/favicon.ico",
+    "static/media/EvilIcons.ttf": "/event-countdown/static/media/EvilIcons.699664b33ac2837d5bee.ttf",
+    "index.html": "/event-countdown/index.html",
+    "static/media/rocket.png": "/event-countdown/static/media/rocket.d2f3bf41d5e4515c39a9.png",
+    "static/media/bell.png": "/event-countdown/static/media/bell.cf04af27d6a651c4b904.png",
+    "favicon-32.png": "/event-countdown/favicon-32.png",
+    "static/media/star.png": "/event-countdown/static/media/star.69c7138684828d68fe5a.png",
+    "static/media/heart.png": "/event-countdown/static/media/heart.23b5c2c0eb77d50ff1b4.png",
+    "favicon-16.png": "/event-countdown/favicon-16.png",
+    "manifest.json": "/event-countdown/manifest.json",
+    "serve.json": "/event-countdown/serve.json",
+    "main.0e67d12c.css.map": "/event-countdown/static/css/main.0e67d12c.css.map",
+    "main.b28e7440.js.map": "/event-countdown/static/js/main.b28e7440.js.map",
+    "113.18e2a135.js.map": "/event-countdown/static/js/113.18e2a135.js.map"
+  },
+  "entrypoints": [
+    "static/js/113.18e2a135.js",
+    "static/css/main.0e67d12c.css",
+    "static/js/main.b28e7440.js"
+  ]
+}
