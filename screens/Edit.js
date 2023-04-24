@@ -244,7 +244,14 @@ const styles = StyleSheet.create({
   },
   inputText: { margin: 5, marginLeft: 5, fontSize: 18 },
   reminderBox: { marginTop: 20, marginBottom: 20 },
-  descriptionInput: { paddingBottom: 50 },
+  descriptionInput: {
+    borderWidth: 2,
+    marginHorizontal: 5,
+    borderRadius: 15,
+    borderColor: "#008ae6",
+    marginBottom: 20,
+    paddingBottom: 200,
+  },
   centeredView: {
     flex: 1,
     justifyContent: "center",
