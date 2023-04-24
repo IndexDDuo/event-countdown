@@ -148,7 +148,10 @@ export default function Edit({ navigation, route }) {
           />
           {showOptionReminder && (
             <DateTimePicker
-              onChange={time}
+              onChange={(e) => {
+                setCopyData({ ...copyData, eventReminderDate: e });
+                setEventData({ ...copyData, eventReminderDate: e });
+              }}
               value={val}
               format={"y-MM-dd h:mm:ss a"}
               isCalendarOpen={false}
