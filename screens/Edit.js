@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     textAlign: "center",
   },
-  // spaceforCalendar: {
-  //   marginBottom: { spaceForCalendar },
-  // },
+  spaceforCalendar: {
+    marginBottom: { spaceForCalendar },
+  },
 });
