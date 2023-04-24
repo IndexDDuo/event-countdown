@@ -58,7 +58,7 @@ export default function Edit({ navigation, route }) {
   const [val, time] = useState(new Date());
 
   const [eventDateFormat, setEventDateFormat] = useState("y-MM-dd h:mm:ss a");
-
+  const [showOptionReminder, setShowOptionReminder] = useState(false);
   useEffect(() => {
     if (copyData.eventAllDay == true) {
       console.log("all day set to true");
@@ -69,14 +69,16 @@ export default function Edit({ navigation, route }) {
     }
   }, [copyData.eventAllDay]);
 
-  // useEffect(() => {
-  //   if (copyData.reminderChecked == true) {
-  //     console.log("reminder set to true");
-  //     return()
-  //   } else {
-  //     console.log("reminder set to falswe");
-  //   }
-  // }, [copyData.reminderChecked]);
+  useEffect(() => {
+    if (copyData.reminderChecked == true) {
+      console.log("reminder set to true");
+      setShowOptionReminder(true);
+      set;
+    } else {
+      setShowOptionReminder(false);
+      console.log("reminder set to falswe");
+    }
+  }, [copyData.reminderChecked]);
 
   return (
     <SafeAreaView>
@@ -145,30 +147,24 @@ export default function Edit({ navigation, route }) {
               });
             }}
           />
-          {useEffect(() => {
-            if (copyData.reminderChecked == true) {
-              return (
-                <DateTimePicker
-                  onChange={time}
-                  value={val}
-                  format={"y-MM-dd h:mm:ss a"}
-                  isCalendarOpen={false}
-                  calendarIcon={null}
-                  closeWidgets={false}
-                  open={true}
-                  onCalendarOpen={() => {
-                    setIsCalendarOpen2(true);
-                  }}
-                  onCalendarClose={() => {
-                    setIsCalendarOpen2(false);
-                  }}
-                  isClockOpen={false}
-                />
-              );
-            } else {
-              return null;
-            }
-          }, [copyData.reminderChecked])}
+          {showOptionReminder && (
+            <DateTimePicker
+              onChange={time}
+              value={val}
+              format={"y-MM-dd h:mm:ss a"}
+              isCalendarOpen={false}
+              calendarIcon={null}
+              closeWidgets={false}
+              open={true}
+              onCalendarOpen={() => {
+                setIsCalendarOpen2(true);
+              }}
+              onCalendarClose={() => {
+                setIsCalendarOpen2(false);
+              }}
+              isClockOpen={false}
+            />
+          )}
           <View style={calendarStyle2}>
             <Text>Event Description:</Text>
             <TextInput
