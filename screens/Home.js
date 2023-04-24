@@ -46,7 +46,7 @@ export default function Home({ navigation, route }) {
             event2.push(container);
           }
         }
-        console.log("items after loop" + event2);
+        console.log("items after loop" + event2[0]);
         console.log(JSON.parse(items[0][1]).eventName);
 
         //sort from closest to now to farthest & future date at top, past dates at the bottom
