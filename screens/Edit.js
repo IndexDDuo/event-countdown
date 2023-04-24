@@ -40,7 +40,7 @@ export default function Edit({ navigation, route }) {
   const [copyData, setCopyData] = useState(eventData);
   const [isCalendarOpen, setIsCalendarOpen] = useState(true);
   const calendarStyle = {
-    marginTop: isCalendarOpen ? 150 : 0,
+    marginTop: isCalendarOpen ? 275 : 0,
   };
 
   useEffect(() => {
@@ -84,7 +84,7 @@ export default function Edit({ navigation, route }) {
             }}
           />
         </View>
-        <View style={styles.spaceforCalendar}>
+        <View style={calendarStyle}>
           <TextInput
             style={styles.input}
             onChangeText={(e) => {
