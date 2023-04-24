@@ -27,7 +27,13 @@ export default function Home({ navigation }) {
         const keys = await AsyncStorage.getAllKeys();
         const items = await AsyncStorage.multiGet(keys);
         console.log("All events:", items);
-        console.log("items" + items[2]);
+        console.log("items" + items.length);
+        for (var i = 0; i < items.length; i++) {
+          if (items[i][0] != "EXPO_CONSTANTS_INSTALLATION_ID") {
+            event2.push(items[i][1]);
+          }
+        }
+        console.log("items after loop" + event2);
         // console.log(JSON.parse(items[0][1]).eventName);
         setEvents(items);
       } catch (e) {
