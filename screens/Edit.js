@@ -72,6 +72,7 @@ export default function Edit({ navigation, route }) {
             isCalendarOpen={true}
             calendarIcon={null}
             closeWidgets={false}
+            open={true}
           />
         </View>
         <View style={styles.spaceforCalendar}>
@@ -112,6 +113,7 @@ export default function Edit({ navigation, route }) {
             showTimeSelect={true}
             format={"h:mm:ss a"}
             disableCalendar={true}
+            disableClock={true}
           />
           <Text>Event Description:</Text>
           <TextInput
