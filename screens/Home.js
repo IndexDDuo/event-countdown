@@ -119,7 +119,7 @@ export default function Home({ navigation, route }) {
     desc,
     reminder,
     reminderTime,
-    key
+    eventKey
   ) => {
     setModalVisible(true);
     setShipDataToDetail({
@@ -129,11 +129,18 @@ export default function Home({ navigation, route }) {
       reminder: reminder,
       reminderTime: reminderTime,
     });
-    setKeyForDelete();
+    setKeyForDelete(eventKey);
     // navigation.navigate("Home", { name: name, date: date, desc: desc });
   };
 
-  const TaskDisplay = ({ name, date, desc, reminder, reminderTime, key }) => (
+  const TaskDisplay = ({
+    name,
+    date,
+    desc,
+    reminder,
+    reminderTime,
+    eventKey,
+  }) => (
     <View>
       <TouchableOpacity
         style={styles.eventStyle}
@@ -145,7 +152,7 @@ export default function Home({ navigation, route }) {
             desc,
             reminder,
             reminderTime,
-            key
+            eventKey
           );
           // navigation.navigate("Detail");
         }}
@@ -187,14 +194,15 @@ export default function Home({ navigation, route }) {
   const deleteStoredData = async (key) => {
     try {
       await AsyncStorage.removeItem(key);
+      console.log(key + " deleted");
       return true;
     } catch (exception) {
       return false;
     }
   };
 
-  const handleDelete = () => {
-    deleteStoredData();
+  const handleDelete = (key) => {
+    deleteStoredData(key);
   };
 
   return (
@@ -250,7 +258,7 @@ export default function Home({ navigation, route }) {
                   style={[styles.button, styles.buttonDelete]}
                   onPress={() => {
                     setModalVisible(false);
-                    handleDelete();
+                    handleDelete(keyForDelete);
                     // navigation.navigate("Home");
                   }}
                 >
