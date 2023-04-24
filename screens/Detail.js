@@ -22,7 +22,7 @@ export default function Detail({ navigation, route }) {
     const now = Date.now() / 1000;
     const dateDue = new Date(date).getTime() / 1000;
     console.log("now: " + now + "datedue; " + dateDue);
-    const diffsecs = Math.round(now - dateDue);
+    const diffsecs = Math.round(dateDue - now);
     console.log(diffsecs);
     return diffsecs;
   }
@@ -33,7 +33,7 @@ export default function Detail({ navigation, route }) {
     }
     const days = Math.floor(remainingTime / 86400);
     const hours = Math.floor((remainingTime % 86400) / 3600);
-    const minutes = Math.floor((remainingTime % 311040000) / 60);
+    const minutes = Math.floor((remainingTime % 86400) / 3600 / 60);
     const seconds = remainingTime % 60;
 
     return (
