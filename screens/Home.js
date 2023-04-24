@@ -47,13 +47,19 @@ export default function Home({ navigation, route }) {
         }
         // console.log("items after loop" + event2);
         // console.log(JSON.parse(items[0][1]).eventName);
-        event2.sort((a, b) => {
+        sortedEvent2 = event2.sort((a, b) => {
           const dateA = new Date(a.eventDate);
           const dateB = new Date(b.eventDate);
           const now = Date.now();
-          if (dateB > now) {
+          if (dateA < now && dateB < now) {
+            return dateA - dateB;
+          } else if (dateA < now) {
+            return 1;
+          } else if (dateB < now) {
+            return -1;
+          } else {
+            return dateA - dateB;
           }
-          return new Date(b.eventDate) - new Date(a.eventDate);
         });
         setEvents(event2);
         // console.log("items after loop" + event2[0].eventName);
