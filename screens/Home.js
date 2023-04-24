@@ -54,7 +54,7 @@ export default function Home({ navigation, route }) {
       }
     };
     logAllItems();
-  }, []);
+  }, [modalVisible]);
 
   function calcDays(date) {
     const oneDay = 24 * 60 * 60 * 1000;
