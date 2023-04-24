@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/event-countdown/static/css/main.0e67d12c.css",
-    "main.js": "/event-countdown/static/js/main.b28e7440.js",
-    "static/js/113.18e2a135.js": "/event-countdown/static/js/113.18e2a135.js",
+    "main.js": "/event-countdown/static/js/main.ada1f877.js",
+    "static/js/17.c7df7221.js": "/event-countdown/static/js/17.c7df7221.js",
     "static/media/MaterialCommunityIcons.ttf": "/event-countdown/static/media/MaterialCommunityIcons.5d42b4e60858731e7b65.ttf",
     "static/media/Fontisto.ttf": "/event-countdown/static/media/Fontisto.c0edd68811e0237502fe.ttf",
     "static/media/Ionicons.ttf": "/event-countdown/static/media/Ionicons.3517aeaa34b2f8cd8eef.ttf",
@@ -30,12 +30,12 @@
     "manifest.json": "/event-countdown/manifest.json",
     "serve.json": "/event-countdown/serve.json",
     "main.0e67d12c.css.map": "/event-countdown/static/css/main.0e67d12c.css.map",
-    "main.b28e7440.js.map": "/event-countdown/static/js/main.b28e7440.js.map",
-    "113.18e2a135.js.map": "/event-countdown/static/js/113.18e2a135.js.map"
+    "main.ada1f877.js.map": "/event-countdown/static/js/main.ada1f877.js.map",
+    "17.c7df7221.js.map": "/event-countdown/static/js/17.c7df7221.js.map"
   },
   "entrypoints": [
-    "static/js/113.18e2a135.js",
+    "static/js/17.c7df7221.js",
     "static/css/main.0e67d12c.css",
-    "static/js/main.b28e7440.js"
+    "static/js/main.ada1f877.js"
   ]
 }
