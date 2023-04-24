@@ -106,4 +106,28 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     backgroundColor: "#DDDDDD",
   },
+  name: {
+    textAlign: "center",
+    backgroundColor: "#CCB3AD",
+    paddingVertical: 20,
+    paddingHorizontal: 10,
+    marginHorizontal: 20,
+    borderRadius: 20,
+  },
+  date: {
+    textAlign: "center",
+    backgroundColor: "#CCB3AD",
+    paddingVertical: 20,
+    paddingHorizontal: 10,
+    marginHorizontal: 20,
+    borderRadius: 20,
+  },
+  desc: {
+    textAlign: "center",
+    backgroundColor: "#CCB3AD",
+    paddingVertical: 20,
+    marginHorizontal: 20,
+    paddingHorizontal: 10,
+    borderRadius: 20,
+  },
 });
