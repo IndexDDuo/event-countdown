@@ -85,5 +85,7 @@ const styles = StyleSheet.create({
   },
   timerCircle: {
     marginLeft: 50,
+    margin: 50,
+    alignContent: "center",
   },
 });
