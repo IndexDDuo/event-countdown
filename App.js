@@ -82,7 +82,7 @@ export default function App() {
             title: "Events",
             headerRight: () => (
               <Button
-                styles={styles.addButton}
+                style={styles.addButton}
                 title="Add"
                 onPress={() => {
                   navigation.navigate("Edit");
