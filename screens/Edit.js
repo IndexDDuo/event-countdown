@@ -97,6 +97,9 @@ export default function Edit({ navigation, route }) {
           <DateTimePicker
             onChange={(e) => {
               console.log(e);
+              if (copyData.eventAllDay == true) {
+                const day = e.toISOString().substr(0, 10);
+              }
               setCopyData({ ...copyData, eventDate: e });
               setEventData({ ...copyData, eventDate: e });
             }}
