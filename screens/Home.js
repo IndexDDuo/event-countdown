@@ -106,7 +106,7 @@ export default function Home({ navigation, route }) {
     // navigation.navigate("Home", { name: name, date: date, desc: desc });
   };
 
-  const TaskDisplay = ({ name, date, desc }) => (
+  const TaskDisplay = ({ name, date, desc, reminder, reminderTime }) => (
     <View>
       <TouchableOpacity
         style={styles.eventStyle}
