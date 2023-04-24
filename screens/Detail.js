@@ -17,6 +17,15 @@ export default function Detail({ navigation, route }) {
   const { name, date, desc } = route.params;
   console.log(name + date + desc);
 
+  function calcDays(date) {
+    const oneDay = 24 * 60 * 60 * 1000;
+    const now = Date.now();
+    const dateDue = new Date(date);
+    const diffDays = Math.round(Math.abs((now - dateDue) / oneDay));
+    console.log(diffDays);
+    return secs;
+  }
+
   const renderTime = ({ remainingTime }) => {
     if (remainingTime === 0) {
       return <div className="timer">Too late...</div>;
