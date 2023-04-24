@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
     borderColor: "#008ae6",
     marginBottom: 10,
   },
-  inputText: { margin: 5, marginLeft: 5, textStyle: "bold" },
+  inputText: { margin: 5, marginLeft: 5, fontSize: 18 },
   centeredView: {
     flex: 1,
     justifyContent: "center",
