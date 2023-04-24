@@ -68,10 +68,10 @@ export default function Edit({ navigation, route }) {
             calendarIcon={null}
             clearIcon={null}
             onCalendarOpen={() => {
-              return <Text style={styles.spaceforCalendar}>hi</Text>;
+              styles.spaceforCalendar.marginBottom = 50;
             }}
           />
-
+          <Text style={styles.spaceforCalendar}>hi</Text>
           <TextInput
             style={styles.input}
             onChangeText={(e) => {
