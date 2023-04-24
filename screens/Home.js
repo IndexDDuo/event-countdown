@@ -101,8 +101,7 @@ export default function Home({ navigation, route }) {
       date: date,
       desc: desc,
       reminder: reminder,
-      reminderTime,
-      reminderTime,
+      reminderTime: reminderTime,
     });
     // navigation.navigate("Home", { name: name, date: date, desc: desc });
   };
@@ -112,7 +111,7 @@ export default function Home({ navigation, route }) {
       <TouchableOpacity
         style={styles.eventStyle}
         onPress={() => {
-          handlePress(navigation, name, date, desc);
+          handlePress(navigation, name, date, desc, reminder, reminderTime);
           // navigation.navigate("Detail");
         }}
       >

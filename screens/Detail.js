@@ -14,7 +14,7 @@ async function cacheFonts(fonts) {
 }
 export default function Detail({ navigation, route }) {
   cacheFonts([FontAwesome.font]);
-  const { name, date, desc } = route.params;
+  const { name, date, desc, reminder, reminderTime } = route.params;
   console.log(name + date + desc);
 
   function calcDays(date) {
@@ -47,6 +47,15 @@ export default function Detail({ navigation, route }) {
       </View>
     );
   };
+  const checkReminder = (reminder) => {
+    if (reminder == true) {
+      return (
+        <View>
+          <Text>You will be reminded on: {reminderTime}</Text>
+        </View>
+      );
+    }
+  };
 
   return (
     <SafeAreaView>
@@ -54,7 +63,7 @@ export default function Detail({ navigation, route }) {
         <Text>Event Name: {name}</Text>
         <Text>Event occurs on: {date}</Text>
         <Text>Event Description: {desc}</Text>
-        <Text>{reminder(reminder)}</Text>
+        <Text>{checkReminder(reminder)}</Text>
 
         <View style={styles.timerCircle}>
           <CountdownCircleTimer
