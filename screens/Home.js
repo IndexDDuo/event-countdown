@@ -45,13 +45,15 @@ export default function Home({ navigation }) {
   }, []);
 
   const TaskDisplay = ({ name, date }) => (
+
+    return(
     <View>
       <Text>{name}</Text>
       <Text>
         {Date.now() - date} days left until {date}
       </Text>
       <Text>-----------</Text>
-    </View>
+    </View>)
   );
 
   return (
