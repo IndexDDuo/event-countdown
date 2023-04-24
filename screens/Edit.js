@@ -98,7 +98,7 @@ export default function Edit({ navigation, route }) {
             onChange={(e) => {
               var day;
               if (copyData.eventAllDay == true) {
-                day = e.toISOString().substring(0, 10);
+                day = e.toISOString().substr(0, 10);
               } else {
                 day = e;
               }
