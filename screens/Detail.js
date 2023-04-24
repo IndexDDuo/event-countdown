@@ -60,11 +60,12 @@ export default function Detail({ navigation, route }) {
   return (
     <SafeAreaView>
       <View>
-        <Text style={styles.name}>Event Name: {name}</Text>
-        <Text style={styles.date}>Event occurs on: {date}</Text>
-        <Text style={styles.desc}>Event Description: {desc}</Text>
-        <Text>{checkReminder(reminder)}</Text>
-
+        <View style={styles.detailContainer}>
+          <Text style={styles.name}>Event Name: {name}</Text>
+          <Text style={styles.date}>Event occurs on: {date}</Text>
+          <Text style={styles.desc}>Event Description: {desc}</Text>
+          <Text>{checkReminder(reminder)}</Text>
+        </View>
         <View style={styles.timerCircle}>
           <CountdownCircleTimer
             isPlaying
@@ -94,11 +95,15 @@ const styles = StyleSheet.create({
     marginLeft: 40,
   },
   timerCircle: {
-    marginLeft: 50,
+    alignItems: "center",
+    // marginLeft: 150,
     margin: 50,
     alignContent: "center",
   },
-  name: {
+  detailContainer: {
     alignItems: "center",
+    padding: 20,
+    marginBottom: 10,
+    backgroundColor: "#DDDDDD",
   },
 });
