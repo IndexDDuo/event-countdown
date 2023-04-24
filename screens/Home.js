@@ -305,7 +305,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#DD5437",
   },
   buttonView: {
-    backgroundColor: "#2196F3",
+    backgroundColor: "#2db300",
   },
   refreshStyle: {
     margin: 5,
