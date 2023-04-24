@@ -112,6 +112,7 @@ export default function Edit({ navigation, route }) {
               setIsCalendarOpen(false);
             }}
             isClockOpen={false}
+            disableClock={true}
           />
           {/* <TextInput
             style={styles.input}
