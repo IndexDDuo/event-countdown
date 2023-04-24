@@ -18,7 +18,9 @@ export default function Detail({ navigation, route }) {
   return (
     <SafeAreaView>
       <View>
-        <Text>This is Detail Screen</Text>
+        <Text>{name}</Text>
+        <Text>{date}</Text>
+        <Text>{desc}</Text>
       </View>
     </SafeAreaView>
   );
