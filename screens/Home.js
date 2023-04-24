@@ -52,7 +52,7 @@ export default function Home({ navigation, route }) {
             event2.push(appendKey);
           }
         }
-        console.log("test array: " + event2[0].eventKey);
+        // console.log("test array: " + event2[0].eventKey);
         // console.log(JSON.parse(items[0][1]).key);
 
         //sort from closet to now to farthest & future date at top, past dates at the bottom
@@ -185,7 +185,7 @@ export default function Home({ navigation, route }) {
     } else {
       return (
         <View>
-          <Text>Start pressing the "ADD" button</Text>
+          <Text>Add an event by pressing the "ADD" button!</Text>
         </View>
       );
     }
