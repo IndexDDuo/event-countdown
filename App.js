@@ -132,6 +132,6 @@ const styles = StyleSheet.create({
   },
   addButton: {
     borderRadius: 20,
-    marginRight: 5,
+    marginRight: 50,
   },
 });
