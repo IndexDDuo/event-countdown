@@ -83,7 +83,7 @@ export default function Edit({ navigation, route }) {
     <SafeAreaView>
       <ScrollView style={{ height: "100%" }}>
         <View>
-          <Text>Event Name:</Text>
+          <Text style={styles.inputText}>Event Name:</Text>
           <TextInput
             style={styles.input}
             onChangeText={(e) => {
@@ -93,7 +93,7 @@ export default function Edit({ navigation, route }) {
               // console.log("event" + eventData.eventName);
             }}
           ></TextInput>
-          <Text>Event Date:</Text>
+          <Text style={styles.inputText}>Event Date:</Text>
           <DateTimePicker
             onChange={(e) => {
               var day;
@@ -183,7 +183,7 @@ export default function Edit({ navigation, route }) {
             />
           )}
           <View style={calendarStyle2}>
-            <Text>Event Description:</Text>
+            <Text style={styles.inputText}>Event Description:</Text>
             <TextInput
               style={styles.input}
               onChangeText={(e) => {
@@ -237,7 +237,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     borderRadius: 15,
     borderColor: "#008ae6",
+    marginBottom: 10,
   },
+  inputText: { margin: 5, marginLeft: 5, textStyle: "bold" },
   centeredView: {
     flex: 1,
     justifyContent: "center",
