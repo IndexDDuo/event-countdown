@@ -18,12 +18,12 @@ export default function Detail({ navigation, route }) {
   console.log(name + date + desc);
 
   function calcDays(date) {
-    const oneDay = 24 * 60 * 60 * 1000;
+    // const oneDay = 24 * 60 * 60 * 1000;
     const now = Date.now();
     const dateDue = new Date(date);
-    const diffDays = Math.round(Math.abs((now - dateDue) / oneDay));
-    console.log(diffDays);
-    return secs;
+    const diffsecs = Math.round(now - dateDue);
+    console.log(diffsecs);
+    return diffsecs;
   }
 
   const renderTime = ({ remainingTime }) => {
@@ -48,10 +48,10 @@ export default function Detail({ navigation, route }) {
         <Text>Event Description: {desc}</Text>
         <CountdownCircleTimer
           isPlaying
-          duration={10}
+          duration={calcDays(date)}
           colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
           colorsTime={[10, 6, 3, 0]}
-          onComplete={() => ({ shouldRepeat: true, delay: 1 })}
+          onComplete={() => ({ shouldRepeat: false })}
         >
           {renderTime}
         </CountdownCircleTimer>
