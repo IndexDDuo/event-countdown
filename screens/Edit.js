@@ -38,7 +38,7 @@ export default function Edit({ navigation, route }) {
   );
 
   const [copyData, setCopyData] = useState(eventData);
-  const [isCalendarOpen, setIsCalendarOpen] = useState(true);
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const calendarStyle = {
     marginTop: isCalendarOpen ? 275 : 0,
   };
@@ -54,6 +54,16 @@ export default function Edit({ navigation, route }) {
   const [val, time] = useState(new Date());
 
   const [eventDateFormat, setEventDateFormat] = useState("y-MM-dd h:mm:ss a");
+
+  useEffect(() => {
+    if (copyData.eventAllDay == true) {
+      console.log("all day set to true");
+      setEventDateFormat("y-MM-dd");
+    } else {
+      console.log("all day set to falswe");
+      setEventDateFormat("y-MM-dd h:mm:ss a");
+    }
+  }, [copyData.eventAllDay]);
 
   return (
     <SafeAreaView>
@@ -76,8 +86,8 @@ export default function Edit({ navigation, route }) {
               setEventData({ ...copyData, eventDate: e });
             }}
             value={copyData.eventDate}
-            format="y-MM-dd h:mm:ss a"
-            isCalendarOpen={true}
+            format={eventDateFormat}
+            isCalendarOpen={false}
             calendarIcon={null}
             closeWidgets={false}
             open={true}
