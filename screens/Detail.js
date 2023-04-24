@@ -54,6 +54,7 @@ export default function Detail({ navigation, route }) {
         <Text>Event Name: {name}</Text>
         <Text>Event occurs on: {date}</Text>
         <Text>Event Description: {desc}</Text>
+        <Text>{reminder(reminder)}</Text>
 
         <View style={styles.timerCircle}>
           <CountdownCircleTimer
