@@ -75,7 +75,7 @@ export default function App() {
     eventDate: new Date(),
     eventAllDay: false,
     eventReminder: false,
-    eventReminderDate: "",
+    eventReminderDate: new Date(),
     eventDescription: "",
   });
 
