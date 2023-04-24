@@ -53,12 +53,28 @@ export default function Home({ navigation }) {
     return diffDays;
   }
 
+  function checkDateCurrent(date) {
+    const now = Date.now();
+    const dateDue = new Date(date);
+    if (now < dateDue) {
+      return (
+        <Text>
+          {calcDays(date)} days left until {date}
+        </Text>
+      );
+    } else {
+      return (
+        <Text>
+          {calcDays(date)} days since {date}
+        </Text>
+      );
+    }
+  }
+
   const TaskDisplay = ({ name, date }) => (
     <View>
       <Text>{name}</Text>
-      <Text>
-        {calcDays(date)} days left until {date}
-      </Text>
+      <Text>{checkDateCurrent(date)}</Text>
       <Text>-----------</Text>
     </View>
   );
