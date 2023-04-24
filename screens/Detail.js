@@ -37,7 +37,11 @@ export default function Detail({ navigation, route }) {
     return (
       <div className="timer">
         <div className="text">Remaining</div>
-        <div className="value">{remainingTime / dayInSec}</div>
+        <div className="value">
+          {hours}
+          {minutes}
+          {seconds}
+        </div>
         <div className="text">Days</div>
       </div>
     );
