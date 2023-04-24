@@ -46,9 +46,9 @@ export default function Home({ navigation }) {
 
   const TaskDisplay = ({ name, date }) => (
     <View>
+      <Text>{name}</Text>
       <Text>
-        {name}
-        {date}
+        {Date.now() - date}until {date}
       </Text>
       <Text>-----------</Text>
     </View>
