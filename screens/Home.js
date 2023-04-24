@@ -74,12 +74,42 @@ export default function Home({ navigation }) {
     }
   }
 
+  function showModal() {
+    return (
+      <Modal
+        animationType="none"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setModalVisible(false);
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalText}>Saved!</Text>
+            <Pressable
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => {
+                setModalVisible(false);
+                navigation.navigate("Home");
+              }}
+            >
+              <Text style={styles.textStyle}>Ok</Text>
+            </Pressable>
+          </View>
+        </View>
+      </Modal>
+    );
+  }
+
   const TaskDisplay = ({ name, date }) => (
     <View>
       <TouchableOpacity
         style={styles.eventStyle}
         onPress={() => {
-          navigation.navigate("Detail");
+          showModal();
+          // navigation.navigate("Detail");
         }}
       >
         <Text style={styles.eventNameStyle}>{name}</Text>
