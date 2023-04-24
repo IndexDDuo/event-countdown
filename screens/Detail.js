@@ -25,12 +25,14 @@ export default function Detail({ navigation, route }) {
     console.log(diffsecs);
     return diffsecs;
   }
-  const dayInSec = 86400000;
 
   const renderTime = ({ remainingTime }) => {
     if (remainingTime === 0) {
       return <div className="timer">Event countdown completed!</div>;
     }
+    const hours = Math.floor(remainingTime / 3600);
+    const minutes = Math.floor((remainingTime % 3600) / 60);
+    const seconds = remainingTime % 60;
 
     return (
       <div className="timer">
