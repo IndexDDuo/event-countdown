@@ -23,7 +23,6 @@ async function cacheFonts(fonts) {
   return fonts.map(async (font) => await Font.loadAsync(font));
 }
 
-var spaceForCalendar;
 export default function Edit({ navigation, route }) {
   cacheFonts([FontAwesome.font]);
 
@@ -39,7 +38,10 @@ export default function Edit({ navigation, route }) {
   );
 
   const [copyData, setCopyData] = useState(eventData);
-  const [spaceForCalendar, setSpaceforCalendar] = useState(0);
+  const [isCalendarOpen, setIsCalendarOpen] = useState(true);
+  const calendarStyle = {
+    marginTop: isCalendarOpen ? 150 : 0,
+  };
 
   useEffect(() => {
     console.log(`modalVisible is ${modalVisible} in Edit.`);
@@ -75,10 +77,10 @@ export default function Edit({ navigation, route }) {
             closeWidgets={false}
             open={true}
             onCalendarOpen={() => {
-              setSpaceforCalendar(150);
+              setIsCalendarOpen(true);
             }}
             onCalendarClose={() => {
-              setSpaceforCalendar(0);
+              setIsCalendarOpen(false);
             }}
           />
         </View>
@@ -214,8 +216,5 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: "center",
-  },
-  spaceforCalendar: {
-    marginTop: { spaceForCalendar },
   },
 });
