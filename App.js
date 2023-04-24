@@ -81,7 +81,7 @@ export default function App() {
           options={({ navigation }) => ({
             title: "Events",
             headerRight: () => (
-              <View style={styles.addButton}>
+              <View style={styles.button}>
                 <Button
                   title="Add"
                   onPress={() => {
@@ -98,18 +98,20 @@ export default function App() {
           component={Edit}
           options={({ navigation }) => ({
             headerRight: () => (
-              <Button
-                title="Save"
-                onPress={() => {
-                  handleSave(
-                    modalVisible,
-                    setModalVisible,
-                    navigation,
-                    eventData,
-                    setEventData
-                  );
-                }}
-              ></Button>
+              <View style={styles.button}>
+                <Button
+                  title="Save"
+                  onPress={() => {
+                    handleSave(
+                      modalVisible,
+                      setModalVisible,
+                      navigation,
+                      eventData,
+                      setEventData
+                    );
+                  }}
+                ></Button>
+              </View>
             ),
           })}
           initialParams={{
@@ -131,9 +133,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  addButton: {
-    borderRadius: 20,
-    marginRight: 50,
-    backgroundColor: "blue",
+  button: {
+    marginRight: 20,
   },
 });
