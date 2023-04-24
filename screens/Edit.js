@@ -89,8 +89,8 @@ export default function Edit({ navigation, route }) {
             onChangeText={(e) => {
               setCopyData({ ...copyData, eventName: e });
               setEventData({ ...copyData, eventName: e });
-              console.log("copy" + copyData.eventName);
-              console.log("event" + eventData.eventName);
+              // console.log("copy" + copyData.eventName);
+              // console.log("event" + eventData.eventName);
             }}
           ></TextInput>
           <Text>Event Date:</Text>
