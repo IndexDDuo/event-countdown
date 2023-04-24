@@ -1,4 +1,4 @@
-import { StyleSheet, View, FlatList, Modal } from "react-native";
+import { StyleSheet, View, FlatList, Modal, Pressable } from "react-native";
 import { Button, Text } from "@rneui/themed";
 import * as Font from "expo-font";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
@@ -20,6 +20,7 @@ export default function Home({ navigation }) {
   cacheFonts([FontAwesome.font]);
 
   const [events, setEvents] = useState([]);
+  const [modalVisible, setModalVisible] = useState(false);
 
   var event2 = [];
 
@@ -73,6 +74,9 @@ export default function Home({ navigation }) {
       );
     }
   }
+  useEffect(() => {
+    console.log(`App.js ${modalVisible}`);
+  }, [modalVisible]);
 
   function showModal() {
     return (
@@ -87,12 +91,12 @@ export default function Home({ navigation }) {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Saved!</Text>
+            <Text style={styles.modalText}>test</Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => {
                 setModalVisible(false);
-                navigation.navigate("Home");
+                // navigation.navigate("Home");
               }}
             >
               <Text style={styles.textStyle}>Ok</Text>
