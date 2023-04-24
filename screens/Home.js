@@ -28,10 +28,7 @@ export default function Home({ navigation, route }) {
 
   const [events, setEvents] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
-  const [asyncStorageUpdated, setAsyncStorageUpdated] = useState(false);
-
   var event2 = [];
-
   //stop infinity loooooping
   useEffect(() => {
     const logAllItems = async () => {
