@@ -63,7 +63,7 @@ export default function Detail({ navigation, route }) {
         <View style={styles.detailContainer}>
           <Text style={styles.name}>Event Name: {name}</Text>
           <Text style={styles.date}>Event occurs on: {date}</Text>
-          <Text style={styles.desc}>Event Description: {desc}</Text>
+
           <Text>{checkReminder(reminder)}</Text>
         </View>
         <View style={styles.timerCircle}>
@@ -77,6 +77,7 @@ export default function Detail({ navigation, route }) {
             {renderTime}
           </CountdownCircleTimer>
         </View>
+        <Text style={styles.desc}>Event Description: {desc}</Text>
       </View>
     </SafeAreaView>
   );
@@ -110,9 +111,10 @@ const styles = StyleSheet.create({
     textAlign: "center",
     backgroundColor: "#CCB3AD",
     paddingVertical: 20,
-    paddingHorizontal: 10,
+    paddingHorizontal: 50,
     marginHorizontal: 20,
     borderRadius: 20,
+    marginBottom: 20,
   },
   date: {
     textAlign: "center",
@@ -123,11 +125,12 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   desc: {
-    textAlign: "center",
+    textAlign: "left",
     backgroundColor: "#CCB3AD",
     paddingVertical: 20,
     marginHorizontal: 20,
     paddingHorizontal: 10,
     borderRadius: 20,
+    paddingBottom: 150,
   },
 });
