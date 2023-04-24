@@ -158,7 +158,7 @@ export default function Edit({ navigation, route }) {
             <DateTimePicker
               onChange={(e) => {
                 var day;
-                if (copyData.reminderChecked == true) {
+                if (copyData.eventReminder == true) {
                   day = e;
                 } else {
                   day = "";
