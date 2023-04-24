@@ -28,6 +28,7 @@ export default function Home({ navigation, route }) {
 
   const [events, setEvents] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
+  const [asyncStorageUpdated, setAsyncStorageUpdated] = useState(false);
 
   var event2 = [];
 
@@ -53,7 +54,7 @@ export default function Home({ navigation, route }) {
       }
     };
     logAllItems();
-  }, []);
+  }, [asyncStorageUpdated]);
 
   function calcDays(date) {
     const oneDay = 24 * 60 * 60 * 1000;
