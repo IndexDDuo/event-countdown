@@ -72,7 +72,7 @@ export default function App() {
 
   const [eventData, setEventData] = useState({
     eventName: "",
-    eventDate: "",
+    eventDate: new Date(),
     eventAllDay: false,
     eventReminder: false,
     eventDescription: "",

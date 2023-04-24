@@ -50,8 +50,10 @@ export default function Edit({ navigation, route }) {
   //   console.log("Event data:", eventData);
   // }, [eventData]);
 
-  const [value, onChange] = useState(new Date());
+  // const [value, onChange] = useState(new Date());
   const [val, time] = useState(new Date());
+
+  const [eventDateFormat, setEventDateFormat] = useState("y-MM-dd h:mm:ss a");
 
   return (
     <SafeAreaView>
