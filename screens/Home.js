@@ -163,6 +163,8 @@ export default function Home({ navigation, route }) {
     }
   };
 
+  const handleDelete = () => {};
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{ height: "100%" }}>
@@ -216,6 +218,7 @@ export default function Home({ navigation, route }) {
                   style={[styles.button, styles.buttonDelete]}
                   onPress={() => {
                     setModalVisible(false);
+                    handleDelete();
                     // navigation.navigate("Home");
                   }}
                 >
