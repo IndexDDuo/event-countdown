@@ -121,6 +121,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     backgroundColor: "#CCB3AD",
     paddingVertical: 20,
-    marginHorizontal: 25,
+    paddingHorizontal: 5,
+    marginTop: 2,
   },
 });
