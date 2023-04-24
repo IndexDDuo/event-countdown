@@ -15,6 +15,9 @@ import { StackActions } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ButtonGroup } from "react-native-elements";
 import DateTimePicker from "react-datetime-picker";
+import "react-datetime-picker/dist/DateTimePicker.css";
+import "react-calendar/dist/Calendar.css";
+import "react-clock/dist/Clock.css";
 //https://www.npmjs.com/package/react-datetime-picker
 async function cacheFonts(fonts) {
   return fonts.map(async (font) => await Font.loadAsync(font));
@@ -203,6 +206,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   spaceforCalendar: {
-    marginTop: 500,
+    marginTop: 150,
   },
 });
