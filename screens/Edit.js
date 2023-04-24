@@ -42,6 +42,10 @@ export default function Edit({ navigation, route }) {
   const calendarStyle = {
     marginTop: isCalendarOpen ? 275 : 0,
   };
+  const [isCalendarOpen2, setIsCalendarOpen2] = useState(false);
+  const calendarStyle2 = {
+    marginTop: isCalendarOpen2 ? 275 : 0,
+  };
 
   useEffect(() => {
     console.log(`modalVisible is ${modalVisible} in Edit.`);
@@ -135,19 +139,29 @@ export default function Edit({ navigation, route }) {
           <DateTimePicker
             onChange={time}
             value={val}
-            showTimeSelect={true}
-            format={"h:mm:ss a"}
-            disableCalendar={true}
-            disableClock={true}
-          />
-          <Text>Event Description:</Text>
-          <TextInput
-            style={styles.input}
-            onChangeText={(e) => {
-              setCopyData({ ...copyData, eventDescription: e });
-              setEventData({ ...copyData, eventDescription: e });
+            format={"y-MM-dd h:mm:ss a"}
+            isCalendarOpen={false}
+            calendarIcon={null}
+            closeWidgets={false}
+            open={true}
+            onCalendarOpen={() => {
+              setIsCalendarOpen2(true);
             }}
-          ></TextInput>
+            onCalendarClose={() => {
+              setIsCalendarOpen2(false);
+            }}
+            isClockOpen={false}
+          />
+          <View style={calendarStyle2}>
+            <Text>Event Description:</Text>
+            <TextInput
+              style={styles.input}
+              onChangeText={(e) => {
+                setCopyData({ ...copyData, eventDescription: e });
+                setEventData({ ...copyData, eventDescription: e });
+              }}
+            ></TextInput>
+          </View>
         </View>
       </ScrollView>
 
