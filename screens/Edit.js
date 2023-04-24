@@ -69,6 +69,15 @@ export default function Edit({ navigation, route }) {
     }
   }, [copyData.eventAllDay]);
 
+  // useEffect(() => {
+  //   if (copyData.reminderChecked == true) {
+  //     console.log("reminder set to true");
+  //     return()
+  //   } else {
+  //     console.log("reminder set to falswe");
+  //   }
+  // }, [copyData.reminderChecked]);
+
   return (
     <SafeAreaView>
       <ScrollView style={{ height: "100%" }}>
@@ -136,22 +145,24 @@ export default function Edit({ navigation, route }) {
               });
             }}
           />
-          <DateTimePicker
-            onChange={time}
-            value={val}
-            format={"y-MM-dd h:mm:ss a"}
-            isCalendarOpen={false}
-            calendarIcon={null}
-            closeWidgets={false}
-            open={true}
-            onCalendarOpen={() => {
-              setIsCalendarOpen2(true);
-            }}
-            onCalendarClose={() => {
-              setIsCalendarOpen2(false);
-            }}
-            isClockOpen={false}
-          />
+          {copyData.reminderChecked && (
+            <DateTimePicker
+              onChange={time}
+              value={val}
+              format={"y-MM-dd h:mm:ss a"}
+              isCalendarOpen={false}
+              calendarIcon={null}
+              closeWidgets={false}
+              open={true}
+              onCalendarOpen={() => {
+                setIsCalendarOpen2(true);
+              }}
+              onCalendarClose={() => {
+                setIsCalendarOpen2(false);
+              }}
+              isClockOpen={false}
+            />
+          )}
           <View style={calendarStyle2}>
             <Text>Event Description:</Text>
             <TextInput
