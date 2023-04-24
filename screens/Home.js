@@ -85,7 +85,7 @@ export default function Home({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text>This is Home Screen</Text>
+        {/* <Text>This is Home Screen</Text> */}
         <FlatList
           data={events}
           renderItem={({ item }) => (
