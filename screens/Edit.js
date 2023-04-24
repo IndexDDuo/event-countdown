@@ -71,6 +71,7 @@ export default function Edit({ navigation, route }) {
             format="yyyy-MM-dd"
             isCalendarOpen={true}
             calendarIcon={null}
+            closeWidgets={false}
           />
         </View>
         <View style={styles.spaceforCalendar}>
