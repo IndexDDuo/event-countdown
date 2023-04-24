@@ -55,15 +55,17 @@ export default function Detail({ navigation, route }) {
         <Text>Event occurs on: {date}</Text>
         <Text>Event Description: {desc}</Text>
 
-        <CountdownCircleTimer
-          isPlaying
-          duration={calcDays(date)}
-          colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
-          colorsTime={[10, 6, 3, 0]}
-          onComplete={() => ({ shouldRepeat: false })}
-        >
-          {renderTime}
-        </CountdownCircleTimer>
+        <View style={styles.timerCircle}>
+          <CountdownCircleTimer
+            isPlaying
+            duration={calcDays(date)}
+            colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
+            colorsTime={[10, 6, 3, 0]}
+            onComplete={() => ({ shouldRepeat: false })}
+          >
+            {renderTime}
+          </CountdownCircleTimer>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -80,5 +82,8 @@ const styles = StyleSheet.create({
   },
   completedText: {
     marginLeft: 40,
+  },
+  timerCircle: {
+    marginLeft: 50,
   },
 });
