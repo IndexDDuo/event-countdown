@@ -104,18 +104,32 @@ export default function Home({ navigation }) {
       </TouchableOpacity>
     </View>
   );
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={{ height: "100%" }}>
+  const checkIfEventEmpty = () => {
+    if (events.length > 0) {
+      return (
         <View>
-          {/* <Text>This is Home Screen</Text> */}
           <FlatList
             data={events}
             renderItem={({ item }) => (
               <TaskDisplay name={item.eventName} date={item.eventDate} />
             )}
           />
+        </View>
+      );
+    } else {
+      return (
+        <View>
+          <Text>Start pressing the "ADD" button</Text>
+        </View>
+      );
+    }
+  };
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={{ height: "100%" }}>
+        <View>
+          {checkIfEventEmpty()}
           <Modal
             animationType="none"
             transparent={true}
