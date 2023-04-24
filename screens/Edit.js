@@ -97,7 +97,7 @@ export default function Edit({ navigation, route }) {
           <DateTimePicker
             onChange={(e) => {
               var day;
-              if (allDayChecked == true) {
+              if (copyData.eventAllDay == true) {
                 day = e.toISOString().substring(0, 10);
               } else {
                 day = e;
