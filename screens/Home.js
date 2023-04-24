@@ -23,7 +23,7 @@ import Detail from "./Detail.js";
 async function cacheFonts(fonts) {
   return fonts.map(async (font) => await Font.loadAsync(font));
 }
-export default function Home({ navigation }) {
+export default function Home({ navigation, route }) {
   cacheFonts([FontAwesome.font]);
 
   const [events, setEvents] = useState([]);
@@ -85,17 +85,17 @@ export default function Home({ navigation }) {
     console.log(`App.js ${modalVisible}`);
   }, [modalVisible]);
 
-  const handlePress = (navigation) => {
+  const handlePress = (navigation, name, date, desc) => {
     setModalVisible(true);
-    // navigation.navigate("Home", { modalVisible: true });
+    navigation.navigate("Home", { name: name, date: date, desc: desc });
   };
 
-  const TaskDisplay = ({ name, date }) => (
+  const TaskDisplay = ({ name, date, desc }) => (
     <View>
       <TouchableOpacity
         style={styles.eventStyle}
         onPress={() => {
-          handlePress(navigation);
+          handlePress(navigation, name, date, desc);
           // navigation.navigate("Detail");
         }}
       >
@@ -112,7 +112,11 @@ export default function Home({ navigation }) {
           <FlatList
             data={events}
             renderItem={({ item }) => (
-              <TaskDisplay name={item.eventName} date={item.eventDate} />
+              <TaskDisplay
+                name={item.eventName}
+                date={item.eventDate}
+                desc={item.eventDesc}
+              />
             )}
           />
         </View>
@@ -149,7 +153,7 @@ export default function Home({ navigation }) {
                   style={[styles.button, styles.buttonView]}
                   onPress={() => {
                     setModalVisible(false);
-                    navigation.navigate("Detail");
+                    navigation.navigate("Detail", {});
                   }}
                 >
                   <Text style={styles.textStyle}>Detail</Text>
