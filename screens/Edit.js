@@ -142,51 +142,52 @@ export default function Edit({ navigation, route }) {
               });
             }}
           />
-          <CheckBox
-            style={styles.reminderBox}
-            title={"Reminder?"}
-            checked={reminderChecked}
-            onPress={() => {
-              setReminderChecked(!reminderChecked);
-              setCopyData({ ...copyData, eventReminder: !reminderChecked });
-              setEventData({
-                ...copyData,
-                eventReminder: !reminderChecked,
-              });
-            }}
-          />
-          {showOptionReminder && (
-            <DateTimePicker
-              onChange={(e) => {
-                var day;
-                if (copyData.eventReminder == true) {
-                  day = e;
-                } else {
-                  day = "";
-                }
-                console.log(day);
-                setCopyData({ ...copyData, eventReminderDate: day });
-                setEventData({ ...copyData, eventReminderDate: day });
+          <View style={styles.reminderBox}>
+            <CheckBox
+              title={"Reminder?"}
+              checked={reminderChecked}
+              onPress={() => {
+                setReminderChecked(!reminderChecked);
+                setCopyData({ ...copyData, eventReminder: !reminderChecked });
+                setEventData({
+                  ...copyData,
+                  eventReminder: !reminderChecked,
+                });
               }}
-              value={copyData.eventReminderDate}
-              format={"y-MM-dd h:mm:ss a"}
-              isCalendarOpen={false}
-              calendarIcon={null}
-              closeWidgets={false}
-              open={true}
-              onCalendarOpen={() => {
-                setIsCalendarOpen2(true);
-              }}
-              onCalendarClose={() => {
-                setIsCalendarOpen2(false);
-              }}
-              isClockOpen={false}
             />
-          )}
+            {showOptionReminder && (
+              <DateTimePicker
+                onChange={(e) => {
+                  var day;
+                  if (copyData.eventReminder == true) {
+                    day = e;
+                  } else {
+                    day = "";
+                  }
+                  console.log(day);
+                  setCopyData({ ...copyData, eventReminderDate: day });
+                  setEventData({ ...copyData, eventReminderDate: day });
+                }}
+                value={copyData.eventReminderDate}
+                format={"y-MM-dd h:mm:ss a"}
+                isCalendarOpen={false}
+                calendarIcon={null}
+                closeWidgets={false}
+                open={true}
+                onCalendarOpen={() => {
+                  setIsCalendarOpen2(true);
+                }}
+                onCalendarClose={() => {
+                  setIsCalendarOpen2(false);
+                }}
+                isClockOpen={false}
+              />
+            )}
+          </View>
           <View style={calendarStyle2}>
             <Text style={styles.inputText}>Event Description:</Text>
             <TextInput
-              style={styles.input}
+              style={(styles.input, styles.descriptionInput)}
               onChangeText={(e) => {
                 setCopyData({ ...copyData, eventDescription: e });
                 setEventData({ ...copyData, eventDescription: e });
@@ -243,6 +244,7 @@ const styles = StyleSheet.create({
   },
   inputText: { margin: 5, marginLeft: 5, fontSize: 18 },
   reminderBox: { marginTop: 20, marginBottom: 20 },
+  descriptionInput: { paddingBottom: 50 },
   centeredView: {
     flex: 1,
     justifyContent: "center",
