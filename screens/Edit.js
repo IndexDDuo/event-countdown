@@ -238,6 +238,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderColor: "#008ae6",
     marginBottom: 10,
+    paddingBottom: 10,
   },
   inputText: { margin: 5, marginLeft: 5, fontSize: 18 },
   centeredView: {
