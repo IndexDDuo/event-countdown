@@ -163,7 +163,18 @@ export default function Home({ navigation, route }) {
     }
   };
 
-  const handleDelete = () => {};
+  const deleteStoredData = async (key) => {
+    try {
+      await AsyncStorage.removeItem(key);
+      return true;
+    } catch (exception) {
+      return false;
+    }
+  };
+
+  const handleDelete = () => {
+    deleteStoredData();
+  };
 
   return (
     <SafeAreaView style={styles.container}>
