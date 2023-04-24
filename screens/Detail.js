@@ -6,6 +6,8 @@ import React, { useState, useCallback, useEffect, useMemo } from "react";
 import { StackActions } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ButtonGroup } from "react-native-elements";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
+//https://www.npmjs.com/package/react-countdown-circle-timer
 
 async function cacheFonts(fonts) {
   return fonts.map(async (font) => await Font.loadAsync(font));
