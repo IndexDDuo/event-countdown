@@ -209,6 +209,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   spaceforCalendar: {
-    marginTop: 150,
+    marginTop: 250,
   },
 });
