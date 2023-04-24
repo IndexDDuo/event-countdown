@@ -29,7 +29,9 @@ export default function Detail({ navigation, route }) {
 
   const renderTime = ({ remainingTime }) => {
     if (remainingTime === 0) {
-      return <Text>Event countdown completed!</Text>;
+      return (
+        <Text style={styles.completedText}>Event countdown completed!</Text>
+      );
     }
     const days = Math.floor(remainingTime / 86400);
     const hours = Math.floor((remainingTime % 86400) / 3600);
@@ -75,5 +77,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: "bold",
+  },
+  completedText: {
+    marginLeft: 40,
   },
 });
