@@ -42,9 +42,14 @@ export default function Home({ navigation, route }) {
         console.log("items" + items.length);
         for (var i = 0; i < items.length; i++) {
           if (items[i][0] != "EXPO_CONSTANTS_INSTALLATION_ID") {
-            const keyContainer = JSON.parse(items[i][0]);
-            console.log(keyContainer);
-            event2.push(JSON.parse(items[i][1]));
+            // const keyContainer = JSON.parse(items[i][0]);
+            const dataContainer = JSON.parse(items[i][1]);
+            // console.log(keyContainer);
+            const appendKey = {
+              ...dataContainer,
+              key: items[i][0],
+            };
+            event2.push(appendKey);
           }
         }
         // console.log("items after loop" + event2);
@@ -80,7 +85,7 @@ export default function Home({ navigation, route }) {
     const now = Date.now();
     const dateDue = new Date(date);
     const diffDays = Math.round(Math.abs((now - dateDue) / oneDay));
-    console.log(diffDays);
+    // console.log(diffDays);
     return diffDays;
   }
 
