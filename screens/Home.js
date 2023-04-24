@@ -48,7 +48,8 @@ export default function Home({ navigation }) {
     const oneDay = 24 * 60 * 60 * 1000;
     const now = Date.now();
 
-    const diffDays = Math.round(Math.abs((now - date) / oneDay));
+    const date2 = new Date(date);
+    const diffDays = Math.round(Math.abs((now - date2) / oneDay));
     console.log(diffDays);
     return diffDays;
   }
