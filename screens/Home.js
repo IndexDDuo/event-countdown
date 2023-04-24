@@ -106,7 +106,7 @@ export default function Home({ navigation }) {
   );
   const checkIfEventEmpty = () => {
     console.log("length" + events.length);
-    if (events.length > 1) {
+    if (events.length > 0) {
       return (
         <View>
           <FlatList
