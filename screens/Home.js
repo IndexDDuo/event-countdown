@@ -32,7 +32,7 @@ export default function Home({ navigation, route }) {
 
   var event2 = [];
   var sortedEvent2 = [];
-  //stop infinity loooooping
+  //make it refresh when the refresh button is pressed
   useEffect(() => {
     const logAllItems = async () => {
       try {
@@ -52,7 +52,7 @@ export default function Home({ navigation, route }) {
             event2.push(appendKey);
           }
         }
-        // console.log("items after loop" + event2);
+        // console.log("test array: " + event2[0].key);
         // console.log(JSON.parse(items[0][1]).eventName);
 
         //sort from closet to now to farthest & future date at top, past dates at the bottom
