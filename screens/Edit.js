@@ -74,7 +74,7 @@ export default function Edit({ navigation, route }) {
               setEventData({ ...copyData, eventDate: e });
             }}
             value={copyData.eventDate}
-            format="yyyy-MM-dd"
+            format="y-MM-dd h:mm:ss a"
             isCalendarOpen={true}
             calendarIcon={null}
             closeWidgets={false}
