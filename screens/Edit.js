@@ -143,6 +143,7 @@ export default function Edit({ navigation, route }) {
             }}
           />
           <CheckBox
+            style={styles.reminderBox}
             title={"Reminder?"}
             checked={reminderChecked}
             onPress={() => {
@@ -241,6 +242,7 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
   inputText: { margin: 5, marginLeft: 5, fontSize: 18 },
+  reminderBox: { marginTop: 20, marginBottom: 20 },
   centeredView: {
     flex: 1,
     justifyContent: "center",
