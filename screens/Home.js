@@ -85,9 +85,11 @@ export default function Home({ navigation, route }) {
     console.log(`App.js ${modalVisible}`);
   }, [modalVisible]);
 
+  const [shipDataToDetail, setShipDataToDetail] = useState({});
   const handlePress = (navigation, name, date, desc) => {
     setModalVisible(true);
-    navigation.navigate("Home", { name: name, date: date, desc: desc });
+    setShipDataToDetail({ name: name, date: date, desc: desc });
+    // navigation.navigate("Home", { name: name, date: date, desc: desc });
   };
 
   const TaskDisplay = ({ name, date, desc }) => (
