@@ -96,6 +96,7 @@ export default function Edit({ navigation, route }) {
           <Text>Event Date:</Text>
           <DateTimePicker
             onChange={(e) => {
+              console.log(e);
               setCopyData({ ...copyData, eventDate: e });
               setEventData({ ...copyData, eventDate: e });
             }}
