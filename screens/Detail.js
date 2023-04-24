@@ -10,8 +10,10 @@ import { ButtonGroup } from "react-native-elements";
 async function cacheFonts(fonts) {
   return fonts.map(async (font) => await Font.loadAsync(font));
 }
-export default function Detail({ navigation }) {
+export default function Detail({ navigation, route }) {
   cacheFonts([FontAwesome.font]);
+  const { name, date, desc } = route.params;
+  console.log(name + date + desc);
 
   return (
     <SafeAreaView>
