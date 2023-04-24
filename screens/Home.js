@@ -30,12 +30,13 @@ export default function Home({ navigation }) {
         console.log("items" + items.length);
         for (var i = 0; i < items.length; i++) {
           if (items[i][0] != "EXPO_CONSTANTS_INSTALLATION_ID") {
-            event2.push(items[i][1]);
+            event2.push(JSON.parse(items[i][1]));
           }
         }
-        console.log("items after loop" + event2);
+        // console.log("items after loop" + event2);
         // console.log(JSON.parse(items[0][1]).eventName);
         setEvents(event2);
+        // console.log("items after loop" + event2[0].eventName);
       } catch (e) {
         console.log(e);
       }
@@ -49,7 +50,7 @@ export default function Home({ navigation }) {
         {name}
         {date}
       </Text>
-      <Text>hi</Text>
+      <Text>-----------</Text>
     </View>
   );
 
