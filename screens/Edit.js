@@ -97,6 +97,7 @@ export default function Edit({ navigation, route }) {
             onCalendarClose={() => {
               setIsCalendarOpen(false);
             }}
+            isClockOpen={false}
           />
           {/* <TextInput
             style={styles.input}
