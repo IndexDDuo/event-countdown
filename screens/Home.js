@@ -48,6 +48,8 @@ export default function Home({ navigation, route }) {
         }
         console.log("items after loop" + event2);
         console.log(JSON.parse(items[0][1]).eventName);
+
+        //sort from closest to now to farthest & future date at top, past dates at the bottom
         sortedEvent2 = event2.sort((a, b) => {
           const dateA = new Date(a.eventDate);
           const dateB = new Date(b.eventDate);
