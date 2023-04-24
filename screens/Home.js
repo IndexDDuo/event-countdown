@@ -11,6 +11,8 @@ import { eventData, getData } from "../App";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { TouchableOpacity } from "react-native-web";
 
+import Detail from "./Detail.js";
+
 async function cacheFonts(fonts) {
   return fonts.map(async (font) => await Font.loadAsync(font));
 }
@@ -74,7 +76,12 @@ export default function Home({ navigation }) {
 
   const TaskDisplay = ({ name, date }) => (
     <View>
-      <TouchableOpacity style={styles.eventStyle}>
+      <TouchableOpacity
+        style={styles.eventStyle}
+        onPress={() => {
+          navigation.navigate("Detail");
+        }}
+      >
         <Text style={styles.eventNameStyle}>{name}</Text>
         <Text style={styles.eventDateStyle}>{checkDateCurrent(date)}</Text>
       </TouchableOpacity>
