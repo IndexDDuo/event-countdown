@@ -152,7 +152,7 @@ export default function Edit({ navigation, route }) {
                 setCopyData({ ...copyData, eventReminderDate: e });
                 setEventData({ ...copyData, eventReminderDate: e });
               }}
-              value={val}
+              value={copyData.eventReminderDate}
               format={"y-MM-dd h:mm:ss a"}
               isCalendarOpen={false}
               calendarIcon={null}
