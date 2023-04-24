@@ -19,6 +19,16 @@ const storeData = async (key, value) => {
   }
 };
 
+const logAllItems = async () => {
+  try {
+    const keys = await AsyncStorage.getAllKeys();
+    const items = await AsyncStorage.multiGet(keys);
+    console.log("All items:", items);
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 // handling modal
 const handleSave = async (
   modalVisible,
