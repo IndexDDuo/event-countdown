@@ -79,6 +79,7 @@ export default function App() {
           name="Home"
           component={Home}
           options={({ navigation }) => ({
+            title: "Events",
             headerRight: () => (
               <Button
                 title="Add"
