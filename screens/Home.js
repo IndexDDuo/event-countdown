@@ -111,13 +111,15 @@ export default function Home({ navigation, route }) {
   }, [modalVisible]);
 
   const [shipDataToDetail, setShipDataToDetail] = useState({});
+  const [keyForDelete, setKeyForDelete] = useState("");
   const handlePress = (
     navigation,
     name,
     date,
     desc,
     reminder,
-    reminderTime
+    reminderTime,
+    key
   ) => {
     setModalVisible(true);
     setShipDataToDetail({
@@ -127,15 +129,24 @@ export default function Home({ navigation, route }) {
       reminder: reminder,
       reminderTime: reminderTime,
     });
+    setKeyForDelete();
     // navigation.navigate("Home", { name: name, date: date, desc: desc });
   };
 
-  const TaskDisplay = ({ name, date, desc, reminder, reminderTime }) => (
+  const TaskDisplay = ({ name, date, desc, reminder, reminderTime, key }) => (
     <View>
       <TouchableOpacity
         style={styles.eventStyle}
         onPress={() => {
-          handlePress(navigation, name, date, desc, reminder, reminderTime);
+          handlePress(
+            navigation,
+            name,
+            date,
+            desc,
+            reminder,
+            reminderTime,
+            key
+          );
           // navigation.navigate("Detail");
         }}
       >
@@ -158,6 +169,7 @@ export default function Home({ navigation, route }) {
                 desc={item.eventDesc}
                 reminder={item.reminder}
                 reminderTime={item.reminderTime}
+                key={item.key}
               />
             )}
           />
