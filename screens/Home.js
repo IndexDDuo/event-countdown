@@ -112,7 +112,7 @@ export default function Home({ navigation }) {
       <TouchableOpacity
         style={styles.eventStyle}
         onPress={() => {
-          navigation.navigate("Home", { modalVisible: true });
+          handlePress(navigation);
           // navigation.navigate("Detail");
         }}
       >
