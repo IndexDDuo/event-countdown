@@ -69,8 +69,11 @@ export default function Edit({ navigation, route }) {
           ></TextInput>
           <Text>Event Date:</Text>
           <DateTimePicker
-            onChange={onChange}
-            value={value}
+            onChange={(e) => {
+              setCopyData({ ...copyData, eventDate: e });
+              setEventData({ ...copyData, eventDate: e });
+            }}
+            value={copyData.eventDate}
             format="yyyy-MM-dd"
             isCalendarOpen={true}
             calendarIcon={null}
@@ -83,15 +86,15 @@ export default function Edit({ navigation, route }) {
               setIsCalendarOpen(false);
             }}
           />
-        </View>
-        <View style={calendarStyle}>
-          <TextInput
+          {/* <TextInput
             style={styles.input}
             onChangeText={(e) => {
               setCopyData({ ...copyData, eventDate: e });
               setEventData({ ...copyData, eventDate: e });
             }}
-          ></TextInput>
+          ></TextInput> */}
+        </View>
+        <View style={calendarStyle}>
           <CheckBox
             title={"All day?"}
             checked={allDayChecked}
