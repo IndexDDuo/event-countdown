@@ -67,7 +67,11 @@ export default function Edit({ navigation, route }) {
             format="yyyy-MM-dd"
             calendarIcon={null}
             clearIcon={null}
+            onCalendarOpen={() => {
+              return()
+            }}
           />
+          <Text style={styles.spaceforCalendar}></Text>
           <TextInput
             style={styles.input}
             onChangeText={(e) => {
