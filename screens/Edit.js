@@ -96,12 +96,15 @@ export default function Edit({ navigation, route }) {
           <Text>Event Date:</Text>
           <DateTimePicker
             onChange={(e) => {
-              console.log(e);
+              var day;
               if (copyData.eventAllDay == true) {
-                const day = e.toISOString().substr(0, 10);
+                day = e.toISOString().substr(0, 10);
+              } else {
+                day = e;
               }
-              setCopyData({ ...copyData, eventDate: e });
-              setEventData({ ...copyData, eventDate: e });
+              console.log(day);
+              setCopyData({ ...copyData, eventDate: day });
+              setEventData({ ...copyData, eventDate: day });
             }}
             value={copyData.eventDate}
             format={eventDateFormat}
