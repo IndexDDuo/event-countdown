@@ -35,7 +35,7 @@ export default function Home({ navigation }) {
         }
         console.log("items after loop" + event2);
         // console.log(JSON.parse(items[0][1]).eventName);
-        setEvents(items);
+        setEvents(event2);
       } catch (e) {
         console.log(e);
       }
@@ -60,7 +60,7 @@ export default function Home({ navigation }) {
         <FlatList
           data={events}
           renderItem={({ item }) => (
-            <TaskDisplay name={item[1].eventName} date={item[1].eventDate} />
+            <TaskDisplay name={item.eventName} date={item.eventDate} />
           )}
         />
       </View>
