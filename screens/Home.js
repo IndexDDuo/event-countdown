@@ -132,7 +132,7 @@ export default function Home({ navigation }) {
                   style={[styles.button, styles.buttonView]}
                   onPress={() => {
                     setModalVisible(false);
-                    // navigation.navigate("Home");
+                    navigation.navigate("Detail");
                   }}
                 >
                   <Text style={styles.textStyle}>Detail</Text>
