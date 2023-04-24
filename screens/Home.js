@@ -31,6 +31,7 @@ export default function Home({ navigation, route }) {
   const [refresh, setRefresh] = useState(false);
 
   var event2 = [];
+  var sortedEvent2 = [];
   //stop infinity loooooping
   useEffect(() => {
     const logAllItems = async () => {
@@ -50,7 +51,8 @@ export default function Home({ navigation, route }) {
           const dateA = new Date(a.eventDate);
           const dateB = new Date(b.eventDate);
           const now = Date.now();
-          if(dateB>)
+          if (dateB > now) {
+          }
           return new Date(b.eventDate) - new Date(a.eventDate);
         });
         setEvents(event2);
