@@ -19,26 +19,6 @@ const storeData = async (key, value) => {
   }
 };
 
-//  const getData = async (key) => {
-//   try {
-//     const jsonValue = await AsyncStorage.getItem(key);
-//     return jsonValue != null ? JSON.parse(jsonValue) : null;
-//   } catch (e) {
-//     // error reading value
-//     console.log(e);
-//   }
-// };
-
-const logAllItems = async () => {
-  try {
-    const keys = await AsyncStorage.getAllKeys();
-    const items = await AsyncStorage.multiGet(keys);
-    console.log("All items:", items);
-  } catch (e) {
-    console.log(e);
-  }
-};
-
 // handling modal
 const handleSave = async (
   modalVisible,
