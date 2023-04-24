@@ -49,7 +49,7 @@ export default function Edit({ navigation, route }) {
   const [spaceForCalendar, setSpaceforCalendar] = useState(0);
   return (
     <SafeAreaView>
-      <ScrollView>
+      <ScrollView style={{ height: "100%" }}>
         <View>
           <Text>Event Name:</Text>
           <TextInput
@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     textAlign: "center",
   },
-  spaceforCalendar: {
-    marginBottom: { spaceForCalendar },
-  },
+  // spaceforCalendar: {
+  //   marginBottom: { spaceForCalendar },
+  // },
 });
