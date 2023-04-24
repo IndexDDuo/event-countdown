@@ -78,34 +78,10 @@ export default function Home({ navigation }) {
     console.log(`App.js ${modalVisible}`);
   }, [modalVisible]);
 
-  function showModal() {
-    return (
-      <Modal
-        animationType="none"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
-          setModalVisible(false);
-        }}
-      >
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Text style={styles.modalText}>test</Text>
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => {
-                setModalVisible(false);
-                // navigation.navigate("Home");
-              }}
-            >
-              <Text style={styles.textStyle}>Ok</Text>
-            </Pressable>
-          </View>
-        </View>
-      </Modal>
-    );
-  }
+  const handlePress = (navigation) => {
+    setModalVisible(true);
+    navigation.navigate("Home", { modalVisible: true });
+  };
 
   const TaskDisplay = ({ name, date }) => (
     <View>
