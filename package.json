@@ -1,5 +1,5 @@
 {
-  "name": "event-countdown-app",
+  "name": "event-countdown",
   "version": "1.0.0",
   "homepage": "http://IndexDDuo.github.io/event-countdown",
   "main": "node_modules/expo/AppEntry.js",
