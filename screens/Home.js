@@ -143,6 +143,8 @@ export default function Home({ navigation }) {
             <View style={styles.centeredView}>
               <View style={styles.modalView}>
                 <Text style={styles.modalText}>What would you like to do?</Text>
+
+                {/* detail button */}
                 <Pressable
                   style={[styles.button, styles.buttonView]}
                   onPress={() => {
@@ -152,6 +154,8 @@ export default function Home({ navigation }) {
                 >
                   <Text style={styles.textStyle}>Detail</Text>
                 </Pressable>
+
+                {/* edit button */}
                 <Pressable
                   style={[styles.button, styles.buttonEdit]}
                   onPress={() => {
@@ -162,6 +166,7 @@ export default function Home({ navigation }) {
                   <Text style={styles.textStyle}>Edit</Text>
                 </Pressable>
 
+                {/* detele button */}
                 <Pressable
                   style={[styles.button, styles.buttonDelete]}
                   onPress={() => {
