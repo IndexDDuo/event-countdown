@@ -1,4 +1,11 @@
-import { StyleSheet, View, FlatList, Modal, Pressable } from "react-native";
+import {
+  StyleSheet,
+  View,
+  FlatList,
+  Modal,
+  Pressable,
+  ScrollView,
+} from "react-native";
 import { Button, Text } from "@rneui/themed";
 import * as Font from "expo-font";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
@@ -100,58 +107,60 @@ export default function Home({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        {/* <Text>This is Home Screen</Text> */}
-        <FlatList
-          data={events}
-          renderItem={({ item }) => (
-            <TaskDisplay name={item.eventName} date={item.eventDate} />
-          )}
-        />
-        <Modal
-          animationType="none"
-          transparent={true}
-          visible={modalVisible}
-          onRequestClose={() => {
-            Alert.alert("Modal has been closed.");
-            setModalVisible(false);
-          }}
-        >
-          <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-              <Text style={styles.modalText}>What would you like to do?</Text>
-              <Pressable
-                style={[styles.button, styles.buttonView]}
-                onPress={() => {
-                  setModalVisible(false);
-                  // navigation.navigate("Home");
-                }}
-              >
-                <Text style={styles.textStyle}>Detail</Text>
-              </Pressable>
-              <Pressable
-                style={[styles.button, styles.buttonEdit]}
-                onPress={() => {
-                  setModalVisible(false);
-                  // navigation.navigate("Home");
-                }}
-              >
-                <Text style={styles.textStyle}>Edit</Text>
-              </Pressable>
+      <ScrollView style={{ height: "100%" }}>
+        <View>
+          {/* <Text>This is Home Screen</Text> */}
+          <FlatList
+            data={events}
+            renderItem={({ item }) => (
+              <TaskDisplay name={item.eventName} date={item.eventDate} />
+            )}
+          />
+          <Modal
+            animationType="none"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+              Alert.alert("Modal has been closed.");
+              setModalVisible(false);
+            }}
+          >
+            <View style={styles.centeredView}>
+              <View style={styles.modalView}>
+                <Text style={styles.modalText}>What would you like to do?</Text>
+                <Pressable
+                  style={[styles.button, styles.buttonView]}
+                  onPress={() => {
+                    setModalVisible(false);
+                    // navigation.navigate("Home");
+                  }}
+                >
+                  <Text style={styles.textStyle}>Detail</Text>
+                </Pressable>
+                <Pressable
+                  style={[styles.button, styles.buttonEdit]}
+                  onPress={() => {
+                    setModalVisible(false);
+                    // navigation.navigate("Home");
+                  }}
+                >
+                  <Text style={styles.textStyle}>Edit</Text>
+                </Pressable>
 
-              <Pressable
-                style={[styles.button, styles.buttonDelete]}
-                onPress={() => {
-                  setModalVisible(false);
-                  // navigation.navigate("Home");
-                }}
-              >
-                <Text style={styles.textStyle}>Delete</Text>
-              </Pressable>
+                <Pressable
+                  style={[styles.button, styles.buttonDelete]}
+                  onPress={() => {
+                    setModalVisible(false);
+                    // navigation.navigate("Home");
+                  }}
+                >
+                  <Text style={styles.textStyle}>Delete</Text>
+                </Pressable>
+              </View>
             </View>
-          </View>
-        </Modal>
-      </View>
+          </Modal>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
