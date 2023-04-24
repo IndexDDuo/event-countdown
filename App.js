@@ -87,7 +87,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
-          name="Home"
+          name="Events"
           component={Home}
           options={({ navigation }) => ({
             headerRight: () => (
