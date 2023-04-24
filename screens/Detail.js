@@ -38,10 +38,10 @@ export default function Detail({ navigation, route }) {
 
     return (
       <View>
-        <div className="text">Remaining</div>
-        <div className="value">
+        <Text>Remaining</Text>
+        <Text>
           {days} days {hours}:{minutes}:{seconds}
-        </div>
+        </Text>
       </View>
     );
   };
