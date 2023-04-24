@@ -21,6 +21,7 @@ export default function Detail({ navigation, route }) {
     // const oneDay = 24 * 60 * 60 * 1000;
     const now = Date.now();
     const dateDue = new Date(date);
+    console.log("now: " + now + "datedue; " + dateDue);
     const diffsecs = Math.round(now - dateDue);
     console.log(diffsecs);
     return diffsecs;
@@ -41,11 +42,6 @@ export default function Detail({ navigation, route }) {
         <div className="value">
           {days} days {hours}:{minutes}:{seconds}
         </div>
-        {/* <div className="text">Hours</div>
-        <div className="value">{minutes}</div>
-        <div className="text">minutes</div>
-        <div className="value">{seconds}</div>
-        <div className="text">seconds</div> */}
       </div>
     );
   };
