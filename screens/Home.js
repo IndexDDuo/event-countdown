@@ -119,9 +119,18 @@ export default function Home({ navigation }) {
         >
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
-              <Text style={styles.modalText}>test</Text>
+              <Text style={styles.modalText}>What would you like to do?</Text>
               <Pressable
-                style={[styles.button, styles.buttonClose]}
+                style={[styles.button, styles.buttonView]}
+                onPress={() => {
+                  setModalVisible(false);
+                  // navigation.navigate("Home");
+                }}
+              >
+                <Text style={styles.textStyle}>Detail</Text>
+              </Pressable>
+              <Pressable
+                style={[styles.button, styles.buttonEdit]}
                 onPress={() => {
                   setModalVisible(false);
                   // navigation.navigate("Home");
@@ -131,7 +140,7 @@ export default function Home({ navigation }) {
               </Pressable>
 
               <Pressable
-                style={[styles.button, styles.buttonClose]}
+                style={[styles.button, styles.buttonDelete]}
                 onPress={() => {
                   setModalVisible(false);
                   // navigation.navigate("Home");
@@ -199,6 +208,7 @@ const styles = StyleSheet.create({
   button: {
     borderRadius: 20,
     padding: 10,
+    marginBottom: 5,
     elevation: 2,
     width: 80,
   },
@@ -216,5 +226,14 @@ const styles = StyleSheet.create({
   modalText: {
     marginBottom: 15,
     textAlign: "center",
+  },
+  buttonEdit: {
+    backgroundColor: "#2196F3",
+  },
+  buttonDelete: {
+    backgroundColor: "#DD5437",
+  },
+  buttonView: {
+    backgroundColor: "#2196F3",
   },
 });
