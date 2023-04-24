@@ -53,7 +53,8 @@ export default function Detail({ navigation, route }) {
         <Text>Event Name: {name}</Text>
         <Text>Event occurs on: {date}</Text>
         <Text>Event Description: {desc}</Text>
-        <CountdownCircleTimer
+        <Text>{renderTime(calcDays(date))}</Text>
+        {/* <CountdownCircleTimer
           isPlaying
           duration={calcDays(date)}
           colors={["#004777", "#F7B801", "#A30000", "#A30000"]}
@@ -61,7 +62,7 @@ export default function Detail({ navigation, route }) {
           onComplete={() => ({ shouldRepeat: false })}
         >
           {renderTime}
-        </CountdownCircleTimer>
+        </CountdownCircleTimer> */}
       </View>
     </SafeAreaView>
   );
