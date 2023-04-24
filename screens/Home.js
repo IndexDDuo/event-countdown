@@ -52,8 +52,8 @@ export default function Home({ navigation, route }) {
             event2.push(appendKey);
           }
         }
-        // console.log("test array: " + event2[0].key);
-        // console.log(JSON.parse(items[0][1]).eventName);
+        console.log("test array: " + event2[0].key);
+        console.log(JSON.parse(items[0][1]).key);
 
         //sort from closet to now to farthest & future date at top, past dates at the bottom
         sortedEvent2 = event2.sort((a, b) => {
@@ -169,7 +169,7 @@ export default function Home({ navigation, route }) {
                 desc={item.eventDesc}
                 reminder={item.reminder}
                 reminderTime={item.reminderTime}
-                key={item.key}
+                eventKey={item.key}
               />
             )}
           />
