@@ -76,7 +76,7 @@ export default function Home({ navigation }) {
     <View>
       <TouchableOpacity style={styles.eventStyle}>
         <Text style={styles.eventNameStyle}>{name}</Text>
-        <Text>{checkDateCurrent(date)}</Text>
+        <Text style={styles.eventDateStyle}>{checkDateCurrent(date)}</Text>
       </TouchableOpacity>
     </View>
   );
@@ -113,5 +113,14 @@ const styles = StyleSheet.create({
   },
   eventNameStyle: {
     textAlign: "center",
+    backgroundColor: "#CCB3AD",
+    paddingVertical: 20,
+    marginHorizontal: 25,
+  },
+  eventDateStyle: {
+    textAlign: "center",
+    backgroundColor: "#CCB3AD",
+    paddingVertical: 20,
+    marginHorizontal: 25,
   },
 });
