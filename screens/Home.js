@@ -134,7 +134,11 @@ export default function Home({ navigation, route }) {
     <SafeAreaView style={styles.container}>
       <ScrollView style={{ height: "100%" }}>
         <View>
+          <TouchableOpacity>
+            <Text>Refresh</Text>
+          </TouchableOpacity>
           {checkIfEventEmpty()}
+
           <Modal
             animationType="none"
             transparent={true}
