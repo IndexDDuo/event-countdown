@@ -45,6 +45,7 @@ export default function Edit({ navigation, route }) {
 
   const [value, onChange] = useState(new Date());
   const [val, time] = useState(new Date());
+
   const [spaceForCalendar, setSpaceforCalendar] = useState(0);
   return (
     <SafeAreaView>
