@@ -112,7 +112,7 @@ export default function Home({ navigation }) {
       <TouchableOpacity
         style={styles.eventStyle}
         onPress={() => {
-          showModal();
+          navigation.navigate("Home", { modalVisible: true });
           // navigation.navigate("Detail");
         }}
       >
@@ -132,6 +132,30 @@ export default function Home({ navigation }) {
             <TaskDisplay name={item.eventName} date={item.eventDate} />
           )}
         />
+        <Modal
+          animationType="none"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            Alert.alert("Modal has been closed.");
+            setModalVisible(false);
+          }}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalText}>test</Text>
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => {
+                  setModalVisible(false);
+                  // navigation.navigate("Home");
+                }}
+              >
+                <Text style={styles.textStyle}>Ok</Text>
+              </Pressable>
+            </View>
+          </View>
+        </Modal>
       </View>
     </SafeAreaView>
   );
