@@ -30,16 +30,16 @@ export default function Detail({ navigation, route }) {
     if (remainingTime === 0) {
       return <div className="timer">Event countdown completed!</div>;
     }
-    const days = Math.floor(remainingTime / 3600);
-    const hours = Math.floor(remainingTime / 3600);
-    const minutes = Math.floor((remainingTime % 3600) / 60);
+    const days = Math.floor(remainingTime / 86400);
+    const hours = Math.floor((remainingTime % 86400) / 3600);
+    const minutes = Math.floor((remainingTime % 311040000) / 60);
     const seconds = remainingTime % 60;
 
     return (
       <div className="timer">
         <div className="text">Remaining</div>
         <div className="value">
-          {hours}:{minutes}:{seconds}
+          {days} days {hours}:{minutes}:{seconds}
         </div>
         {/* <div className="text">Hours</div>
         <div className="value">{minutes}</div>
