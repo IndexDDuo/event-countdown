@@ -87,9 +87,23 @@ export default function Home({ navigation, route }) {
   }, [modalVisible]);
 
   const [shipDataToDetail, setShipDataToDetail] = useState({});
-  const handlePress = (navigation, name, date, desc) => {
+  const handlePress = (
+    navigation,
+    name,
+    date,
+    desc,
+    reminder,
+    reminderTime
+  ) => {
     setModalVisible(true);
-    setShipDataToDetail({ name: name, date: date, desc: desc });
+    setShipDataToDetail({
+      name: name,
+      date: date,
+      desc: desc,
+      reminder: reminder,
+      reminderTime,
+      reminderTime,
+    });
     // navigation.navigate("Home", { name: name, date: date, desc: desc });
   };
 
@@ -119,6 +133,8 @@ export default function Home({ navigation, route }) {
                 name={item.eventName}
                 date={item.eventDate}
                 desc={item.eventDesc}
+                reminder={item.reminder}
+                reminderTime={item.reminderTime}
               />
             )}
           />
