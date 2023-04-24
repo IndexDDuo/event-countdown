@@ -48,7 +48,7 @@ export default function Home({ navigation }) {
     <View>
       <Text>{name}</Text>
       <Text>
-        {Date.now() - date}until {date}
+        {Date.now() - date} days left until {date}
       </Text>
       <Text>-----------</Text>
     </View>
