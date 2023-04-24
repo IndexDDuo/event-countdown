@@ -157,8 +157,15 @@ export default function Edit({ navigation, route }) {
           {showOptionReminder && (
             <DateTimePicker
               onChange={(e) => {
-                setCopyData({ ...copyData, eventReminderDate: e });
-                setEventData({ ...copyData, eventReminderDate: e });
+                var day;
+                if (copyData.reminderChecked == true) {
+                  day = e;
+                } else {
+                  day = "";
+                }
+                console.log(day);
+                setCopyData({ ...copyData, eventReminderDate: day });
+                setEventData({ ...copyData, eventReminderDate: day });
               }}
               value={copyData.eventReminderDate}
               format={"y-MM-dd h:mm:ss a"}
