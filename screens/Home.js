@@ -135,7 +135,7 @@ export default function Home({ navigation, route }) {
       <ScrollView style={{ height: "100%" }}>
         <View>
           <TouchableOpacity>
-            <Text>Refresh</Text>
+            <Text style={styles.refreshStyle}>Refresh</Text>
           </TouchableOpacity>
           {checkIfEventEmpty()}
 
@@ -207,6 +207,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 70,
     marginBottom: 10,
     backgroundColor: "#DDDDDD",
+    borderRadius: 20,
   },
   eventNameStyle: {
     textAlign: "center",
@@ -272,5 +273,20 @@ const styles = StyleSheet.create({
   },
   buttonView: {
     backgroundColor: "#2196F3",
+  },
+  refreshStyle: {
+    margin: 5,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 5,
+    alignItems: "left",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
   },
 });
