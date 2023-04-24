@@ -186,7 +186,7 @@ export default function Home({ navigation, route }) {
                 </Pressable>
 
                 {/* edit button */}
-                <Pressable
+                {/* <Pressable
                   style={[styles.button, styles.buttonEdit]}
                   onPress={() => {
                     setModalVisible(false);
@@ -194,7 +194,7 @@ export default function Home({ navigation, route }) {
                   }}
                 >
                   <Text style={styles.textStyle}>Edit</Text>
-                </Pressable>
+                </Pressable> */}
 
                 {/* detele button */}
                 <Pressable
@@ -205,6 +205,16 @@ export default function Home({ navigation, route }) {
                   }}
                 >
                   <Text style={styles.textStyle}>Delete</Text>
+                </Pressable>
+
+                {/* cancel button */}
+                <Pressable
+                  style={[styles.button, styles.buttonEdit]}
+                  onPress={() => {
+                    setModalVisible(false);
+                  }}
+                >
+                  <Text style={styles.textStyle}>Cancel</Text>
                 </Pressable>
               </View>
             </View>
