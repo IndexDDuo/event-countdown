@@ -47,13 +47,13 @@ export default function Home({ navigation, route }) {
             // console.log(keyContainer);
             const appendKey = {
               ...dataContainer,
-              key: items[i][0],
+              eventKey: items[i][0],
             };
             event2.push(appendKey);
           }
         }
-        console.log("test array: " + event2[0].key);
-        console.log(JSON.parse(items[0][1]).key);
+        console.log("test array: " + event2[0].eventKey);
+        // console.log(JSON.parse(items[0][1]).key);
 
         //sort from closet to now to farthest & future date at top, past dates at the bottom
         sortedEvent2 = event2.sort((a, b) => {
@@ -169,7 +169,7 @@ export default function Home({ navigation, route }) {
                 desc={item.eventDesc}
                 reminder={item.reminder}
                 reminderTime={item.reminderTime}
-                eventKey={item.key}
+                eventKey={item.eventKey}
               />
             )}
           />
