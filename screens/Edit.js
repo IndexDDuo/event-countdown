@@ -45,7 +45,7 @@ export default function Edit({ navigation, route }) {
 
   const [value, onChange] = useState(new Date());
   const [val, time] = useState(new Date());
-  const [spaceforCalendar, setSpaceforCalendar] = useSate();
+  const [spaceforCalendar, setSpaceforCalendar] = useSate(0);
   return (
     <SafeAreaView>
       <ScrollView>
@@ -66,10 +66,13 @@ export default function Edit({ navigation, route }) {
             value={value}
             format="yyyy-MM-dd"
             onCalendarOpen={() => {
-              styles.spaceforCalendar.marginBottom = 50;
+              setSpaceforCalendar(50);
+            }}
+            onCalendarClose={() => {
+              setSpaceforCalendar(0);
             }}
           />
-          <Text style={styles.spaceforCalendar}>hi i'm space</Text>
+          <Text style={styles.spaceforCalendar}>hi i'm spaceforCalendar</Text>
           <TextInput
             style={styles.input}
             onChangeText={(e) => {
@@ -203,6 +206,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   spaceforCalendar: {
-    marginBottom: 200,
+    marginBottom: { spaceforCalendar },
   },
 });
