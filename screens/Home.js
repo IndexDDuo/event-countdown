@@ -44,16 +44,18 @@ export default function Home({ navigation }) {
     logAllItems();
   }, []);
 
+  function calcDays(date1, date2) {
+    const oneDay = 24 * 60 * 60 * 1000;
+    const diffDays = Math.round(Math.abs((date1 - date2) / oneDay));
+  }
   const TaskDisplay = ({ name, date }) => (
-
-    return(
     <View>
       <Text>{name}</Text>
       <Text>
         {Date.now() - date} days left until {date}
       </Text>
       <Text>-----------</Text>
-    </View>)
+    </View>
   );
 
   return (
