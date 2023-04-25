@@ -28,3 +28,19 @@ Check out the [live demo](http://IndexDDuo.github.io/event-countdown) on GitHub 
 - react-calendar
 - react-clock
 - react-countdown-circle-timer
+
+## Setup the project on VSCode
+
+CD to your local directory in where you'd like to save the project.
+
+in the terminal, clone the repository
+
+> git clone https://github.com/IndexDDuo/event-countdown.git
+
+Install all dependencies
+
+> npm install
+
+Run the project in development mode
+
+> npm start
