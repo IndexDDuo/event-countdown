@@ -1,11 +1,9 @@
 import { StyleSheet, View } from "react-native";
-import { Button, Text } from "@rneui/themed";
+import { Text } from "@rneui/themed";
 import * as Font from "expo-font";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import React, { useState, useCallback, useEffect, useMemo } from "react";
-import { StackActions } from "@react-navigation/native";
+import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ButtonGroup } from "react-native-elements";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 //https://www.npmjs.com/package/react-countdown-circle-timer
 
