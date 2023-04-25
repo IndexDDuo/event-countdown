@@ -64,7 +64,7 @@ export default function Home({ navigation, route }) {
             return dateA - dateB;
           }
         });
-        setEvents(event2);
+        setEvents(sortedEvent2);
         // console.log("items after loop" + event2[0].eventName);
       } catch (e) {
         console.log(e);
