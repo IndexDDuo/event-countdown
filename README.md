@@ -7,9 +7,13 @@
 - Create new events with name, date, and description
 - Mark events as all-day or with a specific time
 - Set reminders for events
-- View a list of all events and their details
+- View a list of events in an ascending order with the event that's closest to occurring at the top
 - Delete events
+- View events detail
+- Refresh the home page to rerender the screen
 
 ## Demo
 
 Check out the [live demo](http://IndexDDuo.github.io/event-countdown) on GitHub Pages.
+
+##
