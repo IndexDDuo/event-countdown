@@ -6,19 +6,14 @@ import {
   Pressable,
   ScrollView,
 } from "react-native";
-import { Button, Text } from "@rneui/themed";
+import { Text } from "@rneui/themed";
 import * as Font from "expo-font";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import React, { useState, useCallback, useEffect, useMemo } from "react";
-import { StackActions } from "@react-navigation/native";
+import React, { useState, useEffect } from "react";
+
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ButtonGroup } from "react-native-elements";
-// import eventData from "../eventData.json";
-import { eventData, getData } from "../App";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { TouchableOpacity } from "react-native-web";
-
-import Detail from "./Detail.js";
 
 async function cacheFonts(fonts) {
   return fonts.map(async (font) => await Font.loadAsync(font));
