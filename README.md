@@ -33,7 +33,7 @@ Check out the [live demo](http://IndexDDuo.github.io/event-countdown) on GitHub 
 
 CD to your local directory in where you'd like to save the project.
 
-in the terminal, clone the repository
+In the terminal, clone the repository
 
 > git clone https://github.com/IndexDDuo/event-countdown.git
 
