@@ -14,6 +14,8 @@ The event countdown mobile app allows the user to create a countdown for events 
 
 ## Demo
 
+> Open the browser's development mode and change to a mobile device for a better view of the app.
+
 Check out the [live demo](http://IndexDDuo.github.io/event-countdown) on GitHub Pages.
 
 ## Technologies and Packages Used
